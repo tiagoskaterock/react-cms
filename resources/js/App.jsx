@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Sidebar from './components/sidebar/Sidebar';
 
 const App = () => {
     return (
-        <div>
-            <h1>Olá, React com Laravel Mix!</h1>
-        </div>
+        <>            
+            <Sidebar />
+        </>
     );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
+const root = ReactDOM.createRoot(document.getElementById('wrapper'));
 root.render(<App />);
