@@ -10,6 +10,9 @@ export default function MainCard(props) {
                             </div>
                             <div className="h5 mb-0 font-weight-bold text-gray-800">{ props.value }</div>
                         </div>
+
+                        { props.children }
+
                         <div className="col-auto">
                             <i className={props.icon + ' fa-2x text-gray-300'}></i>
                         </div>

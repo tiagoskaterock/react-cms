@@ -14,11 +14,27 @@ function Sidebar() {
 
   return (
     <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        <SidebarBrand />
+      <SidebarBrand />
 
-        <SidebarDivider />
+      <SidebarDivider />
 
-        <DashboardLink title="Dashboard" icon="fas fa-fw fa-tachometer-alt" href="#" />        
+      <DashboardLink
+        title="Dashboard"
+        icon="fas fa-fw fa-tachometer-alt"
+        targetPage="dashboard"
+      />
+      <DashboardLink
+        title="Categorias"
+        icon="fas fa-fw fa-list"
+        targetPage="allCategories"
+      />
+
+      <DashboardLink
+        title="Posts"
+        icon="fas fa-fw fa-blog"
+        targetPage="allPosts"
+      />
+
     </ul>
   );
 }
