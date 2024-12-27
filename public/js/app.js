@@ -2072,6 +2072,38 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
+/***/ "./resources/js/components/buttons/BtnCreate.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/buttons/BtnCreate.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BtnCreate)
+/* harmony export */ });
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+ // Importe o hook
+
+function BtnCreate(props) {
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__.usePage)(),
+    setCurrentPage = _usePage.setCurrentPage; // Obtém a função para alterar o estado global
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+    className: "mb-3 btn btn-primary btn-sm",
+    title: props.title,
+    onClick: function onClick() {
+      return setCurrentPage(props.page);
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+      className: "fas fa-plus mr-1"
+    }), props.title]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/content/PageHeading.jsx":
 /*!*********************************************************!*\
   !*** ./resources/js/components/content/PageHeading.jsx ***!
@@ -2091,80 +2123,6 @@ function PageHeading(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
       className: "h3 mb-0 text-gray-800",
       children: props.title
-    })
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/content/mainCards/MainCard.jsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/components/content/mainCards/MainCard.jsx ***!
-  \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ MainCard)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-function MainCard(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "col-xl-3 col-md-6 mb-4",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      className: '"card border-left-' + props.styleClass + ' shadow h-100 py-2"',
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "card-body",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          className: "row no-gutters align-items-center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: "col mr-2",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: 'text-' + props.styleClass + ' text-xs font-weight-bold text-uppercase mb-1',
-              children: props.title
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: "h5 mb-0 font-weight-bold text-gray-800",
-              children: props.value
-            })]
-          }), props.children, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-            className: "col-auto",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
-              className: props.icon + ' fa-2x text-gray-300'
-            })
-          })]
-        })
-      })
-    })
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/content/mainCards/MainCards.jsx":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/content/mainCards/MainCards.jsx ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ MainCards)
-/* harmony export */ });
-/* harmony import */ var _MainCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainCard */ "./resources/js/components/content/mainCards/MainCard.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-function MainCards() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "row",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_MainCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      title: "Categorias",
-      value: "69",
-      icon: "fas fa-list",
-      styleClass: "primary"
     })
   });
 }
@@ -2215,7 +2173,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/categories/AllCategories */ "./resources/js/components/pages/categories/AllCategories.jsx");
 /* harmony import */ var _pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/posts/AllPosts.jsx */ "./resources/js/components/pages/posts/AllPosts.jsx");
 /* harmony import */ var _pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/categories/NewCategory.jsx */ "./resources/js/components/pages/categories/NewCategory.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/posts/NewPost.jsx */ "./resources/js/components/pages/posts/NewPost.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2228,9 +2188,73 @@ function MainContent() {
   var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_1__.usePage)(),
     currentPage = _usePage.currentPage; // Obtém o estado global para decidir a página
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     id: "content",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {}), currentPage === "newPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/navbar/Breadcrumb.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/navbar/Breadcrumb.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Breadcrumb)
+/* harmony export */ });
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+ // Importe o hook
+
+function Breadcrumb(props) {
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__.usePage)(),
+    setCurrentPage = _usePage.setCurrentPage; // Obtém a função para alterar o estado global
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", _defineProperty(_defineProperty({
+    className: "breadcrumb-item",
+    title: "In\xEDcio",
+    onClick: function onClick() {
+      return setCurrentPage(props.page);
+    }
+  }, "title", props.title), "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+    href: "#",
+    children: props.title
+  })));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/navbar/BreadcrumbActive.jsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/navbar/BreadcrumbActive.jsx ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Breadcrumb)
+/* harmony export */ });
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+ // Importe o hook
+
+function Breadcrumb(props) {
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__.usePage)(),
+    setCurrentPage = _usePage.setCurrentPage; // Obtém a função para alterar o estado global
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+    className: "breadcrumb-item active",
+    "aria-current": "page",
+    title: props.title,
+    children: props.title
   });
 }
 
@@ -2262,6 +2286,28 @@ function Breadcrumbs(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/navbar/PageNavigation.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/navbar/PageNavigation.jsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PageNavigation)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function PageNavigation(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: "row",
+    children: props.children
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/categories/AllCategories.jsx":
 /*!********************************************************************!*\
   !*** ./resources/js/components/pages/categories/AllCategories.jsx ***!
@@ -2277,8 +2323,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _content_PageHeading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../content/PageHeading */ "./resources/js/components/content/PageHeading.jsx");
 /* harmony import */ var _navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../navbar/Breadcrumbs */ "./resources/js/components/navbar/Breadcrumbs.jsx");
-/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../navbar/Breadcrumb.jsx */ "./resources/js/components/navbar/Breadcrumb.jsx");
+/* harmony import */ var _navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../navbar/BreadcrumbActive.jsx */ "./resources/js/components/navbar/BreadcrumbActive.jsx");
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var _navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../navbar/PageNavigation.jsx */ "./resources/js/components/navbar/PageNavigation.jsx");
+/* harmony import */ var _buttons_BtnCreate_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../buttons/BtnCreate.jsx */ "./resources/js/components/buttons/BtnCreate.jsx");
+/* harmony import */ var _table_Table_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../table/Table.jsx */ "./resources/js/components/table/Table.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -2288,7 +2339,12 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
+
  // Importe o hook
+
+
+
 
 // /home/tiago/react-cms/resources/js/components/pages/categories/AllCategories.jsx
 
@@ -2301,12 +2357,12 @@ function AllCategories() {
     _useState4 = _slicedToArray(_useState3, 2),
     loading = _useState4[0],
     setLoading = _useState4[1]; // Estado para indicar carregamento
-  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__.usePage)(),
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_5__.usePage)(),
     setCurrentPage = _usePage.setCurrentPage; // Obtém a função para alterar o estado global
 
   // Função para buscar categorias da API
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    fetch("/api/categories").then(function (response) {
+    fetch("/api/AllCategories").then(function (response) {
       return response.json();
     }).then(function (data) {
       setCategories(data); // Define as categorias no estado
@@ -2317,58 +2373,44 @@ function AllCategories() {
     });
   }, []); // Executa apenas uma vez ao montar o componente
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     className: "container-fluid",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
         title: "Categorias"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-          className: "breadcrumb-item",
-          title: "In\xEDcio",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-            href: "#",
-            children: "In\xEDcio"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-          className: "breadcrumb-item active",
-          "aria-current": "page",
-          children: "Categorias"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          page: "dashboard",
+          title: "In\xEDcio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          title: "Categorias"
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
-      className: "mb-3 btn btn-primary btn-sm",
-      title: "Criar nova categoria",
-      onClick: function onClick() {
-        return setCurrentPage('newCategory');
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-        className: "fas fa-plus mr-1"
-      }), "Nova Categoria"]
-    }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_buttons_BtnCreate_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      title: "Nova Categoria",
+      page: "newCategory"
+    }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
       children: "Carregando categorias..."
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
-      className: "table table-striped",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_table_Table_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("thead", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
             children: "#"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
             children: "Nome"
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tbody", {
         children: categories.length > 0 ? categories.map(function (category, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
               children: index + 1
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
               children: category.name
             })]
           }, category.id);
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tr", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tr", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
             colSpan: "2",
             children: "Nenhuma categoria encontrada."
           })
@@ -2395,13 +2437,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _content_PageHeading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../content/PageHeading */ "./resources/js/components/content/PageHeading.jsx");
 /* harmony import */ var _navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../navbar/Breadcrumbs */ "./resources/js/components/navbar/Breadcrumbs.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var _navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../navbar/Breadcrumb.jsx */ "./resources/js/components/navbar/Breadcrumb.jsx");
+/* harmony import */ var _navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../navbar/BreadcrumbActive.jsx */ "./resources/js/components/navbar/BreadcrumbActive.jsx");
+/* harmony import */ var _navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../navbar/PageNavigation.jsx */ "./resources/js/components/navbar/PageNavigation.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+ // Importe o hook
 
 
 
@@ -2419,6 +2469,8 @@ function NewCategory() {
     _useState6 = _slicedToArray(_useState5, 2),
     message = _useState6[0],
     setMessage = _useState6[1]; // Estado para mensagem de sucesso ou erro
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__.usePage)(),
+    setCurrentPage = _usePage.setCurrentPage; // Obtém a função para alterar o estado global
 
   // Função para pegar o token CSRF
   var getCSRFToken = function getCSRFToken() {
@@ -2468,44 +2520,33 @@ function NewCategory() {
       return setLoading(false);
     });
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "container-fluid",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
         title: "Nova Categoria"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-          className: "breadcrumb-item",
-          title: "In\xEDcio",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-            href: "#",
-            children: "In\xEDcio"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-          className: "breadcrumb-item",
-          title: "Categorias",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-            href: "#",
-            children: "Categorias"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-          className: "breadcrumb-item active",
-          "aria-current": "page",
-          children: "Nova"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          page: "dashboard",
+          title: "In\xEDcio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          page: "allCategories",
+          title: "Categorias"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          title: "Nova"
         })]
       })]
-    }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "alert alert-info",
       children: message
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
       onSubmit: handleSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "form-group",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
           htmlFor: "categoryName",
           children: "Nome da Categoria"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
           type: "text",
           id: "categoryName",
           className: "form-control",
@@ -2516,7 +2557,7 @@ function NewCategory() {
           placeholder: "Digite o nome da categoria",
           required: true
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
         type: "submit",
         className: "btn btn-primary",
         disabled: loading || !categoryName.trim(),
@@ -2539,18 +2580,127 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Dashboard)
 /* harmony export */ });
-/* harmony import */ var _content_mainCards_MainCards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../content/mainCards/MainCards */ "./resources/js/components/content/mainCards/MainCards.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _content_PageHeading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../content/PageHeading */ "./resources/js/components/content/PageHeading.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _MainCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainCard */ "./resources/js/components/pages/dashboard/MainCard.jsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
 
 
 
 function Dashboard() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState2 = _slicedToArray(_useState, 2),
+    totalCategories = _useState2[0],
+    setTotalCategories = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    totalPosts = _useState4[0],
+    setTotalPosts = _useState4[1];
+
+  // Total de categorias pela API
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('/api/totalCategories').then(function (response) {
+      setTotalCategories(response.data);
+    })["catch"](function (error) {
+      console.error("Erro ao buscar o total de categorias:", error);
+    });
+  }, []);
+
+  // Total de posts pela API
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('/api/totalPosts').then(function (response) {
+      setTotalPosts(response.data);
+    })["catch"](function (error) {
+      console.error("Erro ao buscar o total de posts:", error);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "container-fluid",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
       title: "Dashboard"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_content_mainCards_MainCards__WEBPACK_IMPORTED_MODULE_0__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_MainCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Categorias",
+        value: totalCategories,
+        icon: "fas fa-list",
+        styleClass: "primary",
+        page: "allCategories"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_MainCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Posts",
+        value: totalPosts,
+        icon: "fas fa-blog",
+        styleClass: "primary",
+        page: "allPosts"
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/dashboard/MainCard.jsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/pages/dashboard/MainCard.jsx ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MainCard)
+/* harmony export */ });
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+ // Importe o hook
+
+function MainCard(props) {
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_0__.usePage)(),
+    setCurrentPage = _usePage.setCurrentPage; // Obtém a função para alterar o estado global
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "col-xl-3 col-md-6 mb-4",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: '"card border-left-' + props.styleClass + ' shadow h-100 py-2"',
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "card-body",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "row no-gutters align-items-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "col mr-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: 'text-' + props.styleClass + ' text-xs font-weight-bold text-uppercase mb-1',
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                title: props.title,
+                onClick: function onClick() {
+                  return setCurrentPage(props.page);
+                },
+                children: props.title
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "h5 mb-0 font-weight-bold text-gray-800",
+              children: props.value
+            })]
+          }), props.children, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "col-auto",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+              className: props.icon + ' fa-2x text-gray-300'
+            })
+          })]
+        })
+      })
+    })
   });
 }
 
@@ -2569,14 +2719,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _content_PageHeading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../content/PageHeading */ "./resources/js/components/content/PageHeading.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _navbar_PageNavigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../navbar/PageNavigation */ "./resources/js/components/navbar/PageNavigation.jsx");
+/* harmony import */ var _content_PageHeading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../content/PageHeading */ "./resources/js/components/content/PageHeading.jsx");
+/* harmony import */ var _navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../navbar/Breadcrumbs */ "./resources/js/components/navbar/Breadcrumbs.jsx");
+/* harmony import */ var _navbar_Breadcrumb__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../navbar/Breadcrumb */ "./resources/js/components/navbar/Breadcrumb.jsx");
+/* harmony import */ var _navbar_BreadcrumbActive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../navbar/BreadcrumbActive */ "./resources/js/components/navbar/BreadcrumbActive.jsx");
+/* harmony import */ var _table_Table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../table/Table */ "./resources/js/components/table/Table.jsx");
+/* harmony import */ var _buttons_BtnCreate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../buttons/BtnCreate */ "./resources/js/components/buttons/BtnCreate.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
 
 
 
@@ -2601,33 +2763,44 @@ function AllPosts() {
     });
   }, []); // Executa apenas uma vez ao montar o componente
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "container-fluid",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "Posts"
-    }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_navbar_PageNavigation__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Posts"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_navbar_Breadcrumb__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          page: "dashboard",
+          title: "In\xEDcio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_navbar_BreadcrumbActive__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          title: "Posts"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_buttons_BtnCreate__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      title: "Novo Post",
+      page: "newPost"
+    }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
       children: "Carregando posts..."
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
-      className: "table table-striped",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_table_Table__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("thead", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
             children: "#"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
             children: "Nome"
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
         children: posts.length > 0 ? posts.map(function (post, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
               children: index + 1
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
               children: post.name
             })]
           }, post.id);
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tr", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
             colSpan: "2",
             children: "Nenhum post encontrado."
           })
@@ -2635,6 +2808,23 @@ function AllPosts() {
       })]
     })]
   });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/posts/NewPost.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/pages/posts/NewPost.jsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ NewPost)
+/* harmony export */ });
+function NewPost() {
+  return 'New Post';
 }
 
 /***/ }),
@@ -2809,6 +2999,28 @@ function SidebarDivider() {
   });
 }
 ;
+
+/***/ }),
+
+/***/ "./resources/js/components/table/Table.jsx":
+/*!*************************************************!*\
+  !*** ./resources/js/components/table/Table.jsx ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Table)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function Table(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("table", {
+    className: "table table-striped",
+    children: props.children
+  });
+}
 
 /***/ }),
 

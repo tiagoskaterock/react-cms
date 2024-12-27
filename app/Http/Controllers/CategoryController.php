@@ -4,9 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Collection;
 
 class CategoryController extends Controller
 {
+    public function AllCategories() : Collection 
+    {
+        return Category::all();
+    }
+
+    /**
+     * Retorna o total de categorias
+     * @return int
+     */
+    public function totalCategories() : int 
+    {
+        return Category::count();
+    }
+
     /**
      * Armazena uma nova categoria.
      * @param Request $request
@@ -51,4 +66,5 @@ class CategoryController extends Controller
             ], 500); // 500 Internal Server Error
         }
     }
+
 }

@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
+import PageNavigation from "../../navbar/PageNavigation";
 import PageHeading from "../../content/PageHeading";
+import Breadcrumbs from "../../navbar/Breadcrumbs";
+import Breadcrumb from "../../navbar/Breadcrumb";
+import BreadcrumbActive from "../../navbar/BreadcrumbActive";
+import Table from "../../table/Table";
+import BtnCreate from "../../buttons/BtnCreate";
 
 export default function AllPosts() {
-    const [posts, setPosts] = useState([]); 
+    const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("/api/posts")
             .then((response) => response.json())
             .then((data) => {
-                setPosts(data); 
-                setLoading(false); 
+                setPosts(data);
+                setLoading(false);
             })
             .catch((error) => {
                 console.error("Erro ao buscar posts:", error);
@@ -20,13 +26,25 @@ export default function AllPosts() {
 
     return (
         <div className="container-fluid">
-            <PageHeading title="Posts" />
+
+            <PageNavigation>
+
+                <PageHeading title="Posts" />
+
+                <Breadcrumbs>
+                    <Breadcrumb page="dashboard" title="Início" />
+                    <BreadcrumbActive title="Posts" />
+                </Breadcrumbs>
+
+            </PageNavigation>
+
+            <BtnCreate title="Novo Post" page="newPost" />
 
             {/* Mostrar mensagem de carregamento */}
             {loading ? (
                 <p>Carregando posts...</p>
             ) : (
-                <table className="table table-striped">
+                <Table>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -47,7 +65,7 @@ export default function AllPosts() {
                             </tr>
                         )}
                     </tbody>
-                </table>
+                </Table>
             )}
         </div>
     );

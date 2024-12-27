@@ -1,32 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Category;
 use App\Models\Post;
-use App\Http\Controllers\CategoryController;
 
+/**
+ * Início da aplicação
+ */
 Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Área restrita administrativa da aplicação, parte do CMS
+ */
 Route::get('/admin', function () {
     return view('admin');
 });
 
-/**
- * Categories
- */
-Route::get('/api/categories', function () {
-    return Category::all();
-});
-
-
-/**
- * Posts
- */
-Route::get('/api/posts', function () {
-    return Post::all();
-});
-
 // Se você deseja registrar as rotas da API aqui:
-require base_path('routes/api.php');
+require base_path('routes/categories.php');
+require base_path('routes/posts.php');

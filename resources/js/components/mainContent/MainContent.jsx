@@ -5,6 +5,7 @@ import TopBar from "../topBar/TopBar";
 import AllCategories from "../pages/categories/AllCategories";
 import AllPosts from "../pages/posts/AllPosts.jsx";
 import NewCategory from "../pages/categories/NewCategory.jsx";
+import NewPost from "../pages/posts/NewPost.jsx";
 
 export default function MainContent() {
     const { currentPage } = usePage(); // Obtém o estado global para decidir a página
@@ -18,6 +19,7 @@ export default function MainContent() {
             {currentPage === "allCategories" && <AllCategories />}
             {currentPage === "newCategory" && <NewCategory />}
             {currentPage === "allPosts" && <AllPosts />}
+            {currentPage === "newPost" && <NewPost />}
         </div>
     );
 }

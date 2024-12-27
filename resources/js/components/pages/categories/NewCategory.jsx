@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import PageHeading from "../../content/PageHeading";
 import Breadcrumbs from "../../navbar/Breadcrumbs";
+import { usePage } from "../../../contexts/PageContent.js"; // Importe o hook
+import Breadcrumb from "../../navbar/Breadcrumb.jsx";
+import BreadcrumbActive from "../../navbar/BreadcrumbActive.jsx";
+import PageNavigation from "../../navbar/PageNavigation.jsx";
 
 export default function NewCategory() {
     const [categoryName, setCategoryName] = useState(""); // Estado para o nome da nova categoria
     const [loading, setLoading] = useState(false); // Estado para indicar carregamento
     const [message, setMessage] = useState(""); // Estado para mensagem de sucesso ou erro
+    const { setCurrentPage } = usePage(); // Obtém a função para alterar o estado global
 
     // Função para pegar o token CSRF
     const getCSRFToken = () => {
@@ -59,15 +64,16 @@ export default function NewCategory() {
 
     return (
         <div className="container-fluid">
-            <div className="row">
+
+            <PageNavigation>
                 <PageHeading title="Nova Categoria" />
 
                 <Breadcrumbs>
-                    <li className="breadcrumb-item" title="Início"><a href="#">Início</a></li>
-                    <li className="breadcrumb-item" title="Categorias"><a href="#">Categorias</a></li>
-                    <li className="breadcrumb-item active" aria-current="page">Nova</li>
+                    <Breadcrumb page="dashboard" title="Início" />
+                    <Breadcrumb page="allCategories" title="Categorias" /> 
+                    <BreadcrumbActive title="Nova" />                                       
                 </Breadcrumbs>
-            </div>
+            </PageNavigation>
 
             {/* Mensagem de feedback */}
             {message && <div className="alert alert-info">{message}</div>}

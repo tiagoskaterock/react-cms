@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import PageHeading from "../../content/PageHeading";
 import Breadcrumbs from "../../navbar/Breadcrumbs";
+import Breadcrumb from "../../navbar/Breadcrumb.jsx";
+import BreadcrumbActive from "../../navbar/BreadcrumbActive.jsx";
 import { usePage } from "../../../contexts/PageContent.js"; // Importe o hook
+import PageNavigation from "../../navbar/PageNavigation.jsx";
+import BtnCreate from "../../buttons/BtnCreate.jsx";
+import Table from "../../table/Table.jsx";
 
 // /home/tiago/react-cms/resources/js/components/pages/categories/AllCategories.jsx
 
@@ -12,7 +17,7 @@ export default function AllCategories() {
 
     // Função para buscar categorias da API
     useEffect(() => {
-        fetch("/api/categories")
+        fetch("/api/AllCategories")
             .then((response) => response.json())
             .then((data) => {
                 setCategories(data); // Define as categorias no estado
@@ -27,30 +32,24 @@ export default function AllCategories() {
     return (
         <div className="container-fluid">
 
-            <div className="row">
+            <PageNavigation>
 
                 <PageHeading title="Categorias" />
 
                 <Breadcrumbs>
-                    <li className="breadcrumb-item" title="Início"><a href="#">Início</a></li>
-                    <li className="breadcrumb-item active" aria-current="page">Categorias</li>
+                    <Breadcrumb page="dashboard" title="Início" />                    
+                    <BreadcrumbActive title="Categorias" />
                 </Breadcrumbs>
 
-            </div>            
+            </PageNavigation>
 
-            <button 
-                className="mb-3 btn btn-primary btn-sm" 
-                title="Criar nova categoria" 
-                onClick={() => setCurrentPage('newCategory')}>
-                <i className="fas fa-plus mr-1"></i>
-                Nova Categoria
-            </button>
+            <BtnCreate title="Nova Categoria" page="newCategory" />
 
             {/* Mostrar mensagem de carregamento */}
             {loading ? (
                 <p>Carregando categorias...</p>
             ) : (
-                <table className="table table-striped">
+                <Table>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -71,7 +70,7 @@ export default function AllCategories() {
                             </tr>
                         )}
                     </tbody>
-                </table>
+                </Table>
             )}
         </div>
     );
