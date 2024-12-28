@@ -5,8 +5,9 @@ const PageContext = createContext();
 
 // Provedor do contexto
 export function PageProvider({ children }) {
-    const [currentPage, setCurrentPage] = useState('allCategories');
-    console.log(currentPage);
+
+    const [currentPage, setCurrentPage] = useState('dashboard');
+    
     return (
         <PageContext.Provider value={{ currentPage, setCurrentPage }}>
             {children}
