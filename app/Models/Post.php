@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory; // Importa a trait
 class Post extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name', 
+        'body',
+        'category_id',
+    ];
 }

@@ -793,8 +793,164 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ NewPost)
 /* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _content_PageHeading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../content/PageHeading */ "./resources/js/components/content/PageHeading.jsx");
+/* harmony import */ var _navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../navbar/Breadcrumbs */ "./resources/js/components/navbar/Breadcrumbs.jsx");
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var _navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../navbar/Breadcrumb.jsx */ "./resources/js/components/navbar/Breadcrumb.jsx");
+/* harmony import */ var _navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../navbar/BreadcrumbActive.jsx */ "./resources/js/components/navbar/BreadcrumbActive.jsx");
+/* harmony import */ var _navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../navbar/PageNavigation.jsx */ "./resources/js/components/navbar/PageNavigation.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+
+
 function NewPost() {
-  return 'New Post';
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState2 = _slicedToArray(_useState, 2),
+    postName = _useState2[0],
+    setPostName = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    postBody = _useState4[0],
+    setPostBody = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState6 = _slicedToArray(_useState5, 2),
+    categoryId = _useState6[0],
+    setCategoryId = _useState6[1]; // Categoria vinculada ao post
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    loading = _useState8[0],
+    setLoading = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState10 = _slicedToArray(_useState9, 2),
+    message = _useState10[0],
+    setMessage = _useState10[1];
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__.usePage)(),
+    setCurrentPage = _usePage.setCurrentPage;
+  var getCSRFToken = function getCSRFToken() {
+    return document.head.querySelector('meta[name="csrf-token"]').content;
+  };
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    fetch("/api/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-TOKEN": getCSRFToken()
+      },
+      body: JSON.stringify({
+        name: postName,
+        body: postBody,
+        category_id: categoryId
+      })
+    }).then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      return response.json().then(function (data) {
+        throw new Error(data.message || "Erro desconhecido");
+      });
+    }).then(function (data) {
+      setMessage("Post \"".concat(data.post.name, "\" criado com sucesso!"));
+      setPostName("");
+      setPostBody("");
+      setCategoryId("");
+    })["catch"](function (error) {
+      setMessage(error.message || "Erro ao criar post. Tente novamente.");
+      console.error(error);
+    })["finally"](function () {
+      return setLoading(false);
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    className: "container-fluid",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Novo Post"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          page: "dashboard",
+          title: "In\xEDcio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          page: "allPosts",
+          title: "Posts"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          title: "Novo"
+        })]
+      })]
+    }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "alert alert-info",
+      children: message
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+      onSubmit: handleSubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          htmlFor: "postName",
+          children: "T\xEDtulo do Post"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+          type: "text",
+          id: "postName",
+          className: "form-control",
+          value: postName,
+          onChange: function onChange(e) {
+            return setPostName(e.target.value);
+          },
+          placeholder: "Digite o t\xEDtulo do post",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          htmlFor: "postBody",
+          children: "Conte\xFAdo do Post"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("textarea", {
+          id: "postBody",
+          className: "form-control",
+          value: postBody,
+          onChange: function onChange(e) {
+            return setPostBody(e.target.value);
+          },
+          placeholder: "Digite o conte\xFAdo do post",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          htmlFor: "categoryId",
+          children: "Categoria"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+          type: "number",
+          id: "categoryId",
+          className: "form-control",
+          value: categoryId,
+          onChange: function onChange(e) {
+            return setCategoryId(e.target.value);
+          },
+          placeholder: "Digite o ID da categoria",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+        type: "submit",
+        className: "btn btn-primary",
+        disabled: loading || !postName.trim() || !postBody.trim() || !categoryId.trim(),
+        children: loading ? "Criando..." : "Criar Post"
+      })]
+    })]
+  });
 }
 
 /***/ }),
