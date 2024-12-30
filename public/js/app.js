@@ -817,31 +817,50 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 function NewPost() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
-    postName = _useState2[0],
-    setPostName = _useState2[1];
+    categories = _useState2[0],
+    setCategories = _useState2[1]; // Estado para armazenar categorias
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState4 = _slicedToArray(_useState3, 2),
-    postBody = _useState4[0],
-    setPostBody = _useState4[1];
+    postName = _useState4[0],
+    setPostName = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState6 = _slicedToArray(_useState5, 2),
-    categoryId = _useState6[0],
-    setCategoryId = _useState6[1]; // Categoria vinculada ao post
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    postBody = _useState6[0],
+    setPostBody = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState8 = _slicedToArray(_useState7, 2),
-    loading = _useState8[0],
-    setLoading = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    categoryId = _useState8[0],
+    setCategoryId = _useState8[1]; // Categoria vinculada ao post
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState10 = _slicedToArray(_useState9, 2),
-    message = _useState10[0],
-    setMessage = _useState10[1];
+    loading = _useState10[0],
+    setLoading = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState12 = _slicedToArray(_useState11, 2),
+    message = _useState12[0],
+    setMessage = _useState12[1];
   var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__.usePage)(),
     setCurrentPage = _usePage.setCurrentPage;
   var getCSRFToken = function getCSRFToken() {
     return document.head.querySelector('meta[name="csrf-token"]').content;
   };
+
+  // Função para buscar categorias da API
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setLoading(true); // Ativa o carregamento antes de buscar
+    fetch("/api/AllCategories").then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      setCategories(data); // Define as categorias no estado
+      setLoading(false); // Desativa o carregamento
+    })["catch"](function (error) {
+      console.error("Erro ao buscar categorias:", error);
+      setLoading(false);
+    });
+  }, []); // Executa apenas uma vez ao montar o componente
+
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -932,21 +951,29 @@ function NewPost() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
           htmlFor: "categoryId",
           children: "Categoria"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-          type: "number",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("select", {
           id: "categoryId",
           className: "form-control",
           value: categoryId,
           onChange: function onChange(e) {
             return setCategoryId(e.target.value);
           },
-          placeholder: "Digite o ID da categoria",
-          required: true
+          required: true,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+            value: "",
+            disabled: true,
+            children: "Selecione uma categoria"
+          }), categories.map(function (category) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
+              value: category.id,
+              children: category.name
+            }, category.id);
+          })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
         type: "submit",
         className: "btn btn-primary",
-        disabled: loading || !postName.trim() || !postBody.trim() || !categoryId.trim(),
+        disabled: loading || !postName.trim() || !postBody.trim() || !categoryId,
         children: loading ? "Criando..." : "Criar Post"
       })]
     })]

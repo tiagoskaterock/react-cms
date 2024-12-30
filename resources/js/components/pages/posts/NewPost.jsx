@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PageHeading from "../../content/PageHeading";
 import Breadcrumbs from "../../navbar/Breadcrumbs";
 import { usePage } from "../../../contexts/PageContent.js";
@@ -7,6 +7,7 @@ import BreadcrumbActive from "../../navbar/BreadcrumbActive.jsx";
 import PageNavigation from "../../navbar/PageNavigation.jsx";
 
 export default function NewPost() {
+    const [categories, setCategories] = useState([]); // Estado para armazenar categorias
     const [postName, setPostName] = useState("");
     const [postBody, setPostBody] = useState("");
     const [categoryId, setCategoryId] = useState(""); // Categoria vinculada ao post
@@ -17,6 +18,21 @@ export default function NewPost() {
     const getCSRFToken = () => {
         return document.head.querySelector('meta[name="csrf-token"]').content;
     };
+
+    // Função para buscar categorias da API
+    useEffect(() => {
+        setLoading(true); // Ativa o carregamento antes de buscar
+        fetch("/api/AllCategories")
+            .then((response) => response.json())
+            .then((data) => {
+                setCategories(data); // Define as categorias no estado
+                setLoading(false); // Desativa o carregamento
+            })
+            .catch((error) => {
+                console.error("Erro ao buscar categorias:", error);
+                setLoading(false);
+            });
+    }, []); // Executa apenas uma vez ao montar o componente
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -97,21 +113,28 @@ export default function NewPost() {
 
                 <div className="form-group">
                     <label htmlFor="categoryId">Categoria</label>
-                    <input
-                        type="number"
+                    <select
                         id="categoryId"
                         className="form-control"
                         value={categoryId}
                         onChange={(e) => setCategoryId(e.target.value)}
-                        placeholder="Digite o ID da categoria"
                         required
-                    />
+                    >
+                        <option value="" disabled>
+                            Selecione uma categoria
+                        </option>
+                        {categories.map((category) => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <button
                     type="submit"
                     className="btn btn-primary"
-                    disabled={loading || !postName.trim() || !postBody.trim() || !categoryId.trim()}
+                    disabled={loading || !postName.trim() || !postBody.trim() || !categoryId}
                 >
                     {loading ? "Criando..." : "Criar Post"}
                 </button>
