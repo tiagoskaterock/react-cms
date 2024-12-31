@@ -11,9 +11,9 @@ import Table from "../../table/Table.jsx";
 // /home/tiago/react-cms/resources/js/components/pages/categories/AllCategories.jsx
 
 export default function AllCategories() {
+    const { setCurrentPage, setSelectedCategoryId } = usePage(); // Obtenha a função do contexto
     const [categories, setCategories] = useState([]); // Estado para armazenar categorias
     const [loading, setLoading] = useState(true); // Estado para indicar carregamento
-    const { setCurrentPage } = usePage(); // Obtém a função para alterar o estado global
 
     // Função para buscar categorias da API
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function AllCategories() {
                 <PageHeading title="Categorias" />
 
                 <Breadcrumbs>
-                    <Breadcrumb page="dashboard" title="Início" />                    
+                    <Breadcrumb page="dashboard" title="Início" />
                     <BreadcrumbActive title="Categorias" />
                 </Breadcrumbs>
 
@@ -54,6 +54,7 @@ export default function AllCategories() {
                         <tr>
                             <th>#</th>
                             <th>Nome</th>
+                            <th>...</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,6 +63,17 @@ export default function AllCategories() {
                                 <tr key={category.id}>
                                     <td>{index + 1}</td>
                                     <td>{category.name}</td>
+                                    <td>
+                                        <button
+                                            className="btn btn-sm btn-primary"
+                                            onClick={() => {
+                                                setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
+                                                setCurrentPage("editCategory"); // Altera a página para a de edição
+                                            }}
+                                        >
+                                            <i className="fas fa-edit"></i>
+                                        </button>
+                                    </td>
                                 </tr>
                             ))
                         ) : (

@@ -3,12 +3,13 @@ import { usePage } from "../../contexts/PageContent.js";
 import Dashboard from "../pages/dashboard/Dashboard";
 import TopBar from "../topBar/TopBar";
 import AllCategories from "../pages/categories/AllCategories";
-import AllPosts from "../pages/posts/AllPosts.jsx";
 import NewCategory from "../pages/categories/NewCategory.jsx";
+import EditCategory from "../pages/categories/EditCategory.jsx";
+import AllPosts from "../pages/posts/AllPosts.jsx";
 import NewPost from "../pages/posts/NewPost.jsx";
 
 export default function MainContent() {
-    const { currentPage } = usePage(); // Obtém o estado global para decidir a página
+    const { currentPage } = usePage(); // Obtém o estado global para decidir a página    
 
     return (
         <div id="content">
@@ -18,6 +19,7 @@ export default function MainContent() {
             {currentPage === "dashboard" && <Dashboard />}
             {currentPage === "allCategories" && <AllCategories />}
             {currentPage === "newCategory" && <NewCategory />}
+            {currentPage === "editCategory" && <EditCategory />}
             {currentPage === "allPosts" && <AllPosts />}
             {currentPage === "newPost" && <NewPost />}
         </div>

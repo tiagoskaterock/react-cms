@@ -5,17 +5,29 @@ const PageContext = createContext();
 
 // Provedor do contexto
 export function PageProvider({ children }) {
-
-    const [currentPage, setCurrentPage] = useState('dashboard');
+    // Estado para a página atual
+    const [currentPage, setCurrentPage] = useState("dashboard");
     
+    // Estado para armazenar o ID da categoria selecionada
+    const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+
     return (
-        <PageContext.Provider value={{ currentPage, setCurrentPage }}>
+        <PageContext.Provider value={{ 
+            currentPage, 
+            setCurrentPage, 
+            selectedCategoryId, 
+            setSelectedCategoryId 
+        }}>
             {children}
         </PageContext.Provider>
     );
 }
 
-// Hook para usar o contexto em qualquer componente
+// Hook para consumir o contexto em qualquer componente
 export function usePage() {
-    return useContext(PageContext);
+    const context = useContext(PageContext);
+    if (!context) {
+        throw new Error("usePage deve ser usado dentro de um PageProvider");
+    }
+    return context;
 }

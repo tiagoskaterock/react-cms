@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CategoryController extends Controller
 {
-    public function AllCategories() : Collection 
+    public function allCategories(): Collection
     {
         return Category::all();
     }
@@ -17,7 +17,7 @@ class CategoryController extends Controller
      * Retorna o total de categorias
      * @return int
      */
-    public function totalCategories() : int 
+    public function totalCategories(): int
     {
         return Category::count();
     }
@@ -67,4 +67,53 @@ class CategoryController extends Controller
         }
     }
 
+    /**
+     * Retorna os dados de uma categoria específica.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function editCategory($id)
+    {
+        try {
+            $category = Category::findOrFail($id); // Busca a categoria pelo ID ou lança um erro
+            return response()->json($category, 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Categoria não encontrada.'], 404);
+        }
+    }
+
+    public function updateCategory(Request $request, $id)
+    {
+        try {
+            // Validação dos dados recebidos
+            $validatedData = $request->validate([
+                'name' => 'required|string|max:255',
+            ]);
+
+            // Busca a categoria pelo ID
+            $category = Category::findOrFail($id);
+
+            // Atualiza o nome da categoria
+            $category->name = $validatedData['name'];
+            $category->save();
+
+            // Retorna uma resposta de sucesso
+            return response()->json([
+                'message' => 'Categoria atualizada com sucesso!',
+                'category' => $category
+            ], 200);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            // Retorna erro de validação
+            return response()->json([
+                'message' => 'Erro de validação.',
+                'errors' => $e->errors()
+            ], 422);
+        } catch (\Exception $e) {
+            // Retorna erro genérico
+            return response()->json([
+                'message' => 'Erro ao atualizar a categoria. Verifique o ID e tente novamente.',
+            ], 500);
+        }
+    }
 }
