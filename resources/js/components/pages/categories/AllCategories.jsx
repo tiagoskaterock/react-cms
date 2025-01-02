@@ -8,98 +8,100 @@ import PageNavigation from "../../navbar/PageNavigation.jsx";
 import BtnCreate from "../../buttons/BtnCreate.jsx";
 import Table from "../../table/Table.jsx";
 
-// /home/tiago/react-cms/resources/js/components/pages/categories/AllCategories.jsx
-
 export default function AllCategories() {
-    const { setCurrentPage, setSelectedCategoryId } = usePage(); // Obtenha a função do contexto
-    const [categories, setCategories] = useState([]); // Estado para armazenar categorias
-    const [loading, setLoading] = useState(true); // Estado para indicar carregamento
 
-    // Função para buscar categorias da API
-    useEffect(() => {
-        fetch("/api/AllCategories")
-            .then((response) => response.json())
-            .then((data) => {
-                setCategories(data); // Define as categorias no estado
-                setLoading(false); // Desativa o carregamento
-            })
-            .catch((error) => {
-                console.error("Erro ao buscar categorias:", error);
-                setLoading(false);
-            });
-    }, []); // Executa apenas uma vez ao montar o componente
+  const { setSelectedCategoryId, setCurrentPage } = usePage();
+  const [categories, setCategories] = useState([]); // Estado para armazenar categorias
+  const [loading, setLoading] = useState(true); // Estado para indicar carregamento
 
-    return (
-        <div className="container-fluid">
+  // Função para buscar categorias da API
+  useEffect(() => {
+    fetch("/api/AllCategories")
+      .then((response) => response.json())
+      .then((data) => {
+        setCategories(data); // Define as categorias no estado
+        setLoading(false); // Desativa o carregamento
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar categorias:", error);
+        setLoading(false);
+      });
+  }, []); // Executa apenas uma vez ao montar o componente
 
-            <PageNavigation>
+  return (
+    <div className="container-fluid">
 
-                <PageHeading title="Categorias" />
+      <PageNavigation>
 
-                <Breadcrumbs>
-                    <Breadcrumb page="dashboard" title="Início" />
-                    <BreadcrumbActive title="Categorias" />
-                </Breadcrumbs>
+        <PageHeading title="Categorias" />
 
-            </PageNavigation>
+        <Breadcrumbs>
+          <Breadcrumb page="dashboard" title="Início" />
+          <BreadcrumbActive title="Categorias" />
+        </Breadcrumbs>
 
-            <BtnCreate title="Nova Categoria" page="newCategory" />
+      </PageNavigation>
 
-            {/* Mostrar mensagem de carregamento */}
-            {loading ? (
-                <p>Carregando categorias...</p>
+      <BtnCreate title="Nova Categoria" page="newCategory" />
+
+      {/* Mostrar mensagem de carregamento */}
+      {loading ? (
+        <p>Carregando categorias...</p>
+      ) : (
+        <Table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>...</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.length > 0 ? (
+              categories.map((category, index) => (
+                <tr key={category.id}>
+                  <td>{index + 1}</td>
+                  <td>{category.name}</td>
+                  <td>
+
+                    <button
+                      title={"Visualizar categoria " + category.name}
+                      className="btn btn-info btn-sm mr-1"
+                      onClick={() => {
+                        setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
+                        setCurrentPage("viewCategory"); // Altera a página para a de edição
+                      }}>
+                      <i className="fas fa-eye"></i>
+                    </button>
+
+                    <button
+                      title={"Editar categoria " + category.name}
+                      className="btn btn-sm btn-primary mr-1"
+                      onClick={() => {
+                        setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
+                        setCurrentPage("editCategory"); // Altera a página para a de edição
+                      }}
+                    >
+                      <i className="fas fa-edit"></i>
+                    </button>
+
+                    <button
+                      title={"Excluir categoria " + category.name}
+                      className="btn btn-danger btn-sm">
+                      <i className="fas fa-trash"></i>
+                    </button>
+                    
+                  </td>
+                </tr>
+              ))
             ) : (
-                <Table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nome</th>
-                            <th>...</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {categories.length > 0 ? (
-                            categories.map((category, index) => (
-                                <tr key={category.id}>
-                                    <td>{index + 1}</td>
-                                    <td>{category.name}</td>
-                                    <td>
-                                        <button
-                                            title={"Visualizar categoria " + category.name}
-                                            className="btn btn-info btn-sm mr-1"
-                                            onClick={() => {
-                                                setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
-                                                setCurrentPage("viewCategory"); // Altera a página para a de edição
-                                            }}>
-                                            <i className="fas fa-eye"></i>
-                                        </button>
-                                        <button
-                                            title={"Editar categoria " + category.name}
-                                            className="btn btn-sm btn-primary mr-1"
-                                            onClick={() => {
-                                                setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
-                                                setCurrentPage("editCategory"); // Altera a página para a de edição
-                                            }}
-                                        >
-                                            <i className="fas fa-edit"></i>
-                                        </button>
-
-                                        <button 
-                                            title={"Excluir categoria " + category.name}
-                                            className="btn btn-danger btn-sm">
-                                            <i className="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan="2">Nenhuma categoria encontrada.</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </Table>
+              <tr>
+                <td colSpan="2">Nenhuma categoria encontrada.</td>
+              </tr>
             )}
-        </div>
-    );
+          </tbody>
+        </Table>
+      )}
+    </div>
+  );
 }

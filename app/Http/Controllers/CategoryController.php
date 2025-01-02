@@ -116,4 +116,14 @@ class CategoryController extends Controller
             ], 500);
         }
     }
+
+    public function viewCategory($id)
+    {
+        try {
+            $category = Category::findOrFail($id); // Busca a categoria pelo ID ou lança um erro
+            return response()->json($category, 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Categoria não encontrada.'], 404);
+        }
+    }
 }

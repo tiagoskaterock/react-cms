@@ -83,6 +83,7 @@ export default function EditCategory() {
                 <Breadcrumbs>
                     <Breadcrumb page="dashboard" title="Início" />
                     <Breadcrumb page="allCategories" title="Categorias" />
+                    <Breadcrumb page="viewCategory" title={ categoryName } />
                     <BreadcrumbActive title="Editar" />
                 </Breadcrumbs>
             </PageNavigation>
@@ -109,7 +110,8 @@ export default function EditCategory() {
                     className="btn btn-primary"
                     disabled={loading || !categoryName.trim()}
                 >
-                    {loading ? "Atualizando..." : "Atualizar Categoria"}
+                    <i className="fas fa-save mr-1"></i>
+                    {loading ? " Atualizando..." : " Salvar"}
                 </button>
             </form>
         </div>

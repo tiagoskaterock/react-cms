@@ -10,6 +10,8 @@ Route::get('/api/AllCategories', [CategoryController::class, 'allCategories']);
 
 Route::get('/api/EditCategory/{id}', [CategoryController::class, 'editCategory']);
 
+Route::get('/api/viewCategory/{id}', [CategoryController::class, 'viewCategory']);
+
 Route::patch('/api/updateCategory/{id}', [CategoryController::class, 'updateCategory']);
 
 Route::get('/api/totalCategories', [CategoryController::class, 'totalCategories']);
