@@ -13,7 +13,9 @@ function Sidebar() {
   const togglePages = () => setIsPagesOpen(!isPagesOpen);
 
   return (
-    <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul
+      className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+      id="accordionSidebar">
       <SidebarBrand />
 
       <SidebarDivider />
@@ -33,6 +35,12 @@ function Sidebar() {
         title="Posts"
         icon="fas fa-fw fa-blog"
         targetPage="allPosts"
+      />
+
+      <DashboardLink
+        title="Usuários"
+        icon="fas fa-fw fa-users"
+        targetPage="allUsers"
       />
 
     </ul>
