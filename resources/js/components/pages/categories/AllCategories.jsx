@@ -65,13 +65,29 @@ export default function AllCategories() {
                                     <td>{category.name}</td>
                                     <td>
                                         <button
-                                            className="btn btn-sm btn-primary"
+                                            title={"Visualizar categoria " + category.name}
+                                            className="btn btn-info btn-sm mr-1"
+                                            onClick={() => {
+                                                setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
+                                                setCurrentPage("viewCategory"); // Altera a página para a de edição
+                                            }}>
+                                            <i className="fas fa-eye"></i>
+                                        </button>
+                                        <button
+                                            title={"Editar categoria " + category.name}
+                                            className="btn btn-sm btn-primary mr-1"
                                             onClick={() => {
                                                 setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
                                                 setCurrentPage("editCategory"); // Altera a página para a de edição
                                             }}
                                         >
                                             <i className="fas fa-edit"></i>
+                                        </button>
+
+                                        <button 
+                                            title={"Excluir categoria " + category.name}
+                                            className="btn btn-danger btn-sm">
+                                            <i className="fas fa-trash"></i>
                                         </button>
                                     </td>
                                 </tr>

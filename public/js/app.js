@@ -145,7 +145,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_categories_EditCategory_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/categories/EditCategory.jsx */ "./resources/js/components/pages/categories/EditCategory.jsx");
 /* harmony import */ var _pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/posts/AllPosts.jsx */ "./resources/js/components/pages/posts/AllPosts.jsx");
 /* harmony import */ var _pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/posts/NewPost.jsx */ "./resources/js/components/pages/posts/NewPost.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pages/categories/ViewCategory.jsx */ "./resources/js/components/pages/categories/ViewCategory.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -160,9 +162,9 @@ function MainContent() {
   var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_1__.usePage)(),
     currentPage = _usePage.currentPage; // Obtém o estado global para decidir a página    
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
     id: "content",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {}), currentPage === "editCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_categories_EditCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {}), currentPage === "newPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {}), currentPage === "viewCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__["default"], {}), currentPage === "editCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_EditCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {}), currentPage === "newPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {})]
   });
 }
 
@@ -382,9 +384,20 @@ function AllCategories() {
               children: index + 1
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
               children: category.name
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
-                className: "btn btn-sm btn-primary",
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                title: "Visualizar categoria " + category.name,
+                className: "btn btn-info btn-sm mr-1",
+                onClick: function onClick() {
+                  setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
+                  setCurrentPage("viewCategory"); // Altera a página para a de edição
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                  className: "fas fa-eye"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                title: "Editar categoria " + category.name,
+                className: "btn btn-sm btn-primary mr-1",
                 onClick: function onClick() {
                   setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
                   setCurrentPage("editCategory"); // Altera a página para a de edição
@@ -392,7 +405,13 @@ function AllCategories() {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
                   className: "fas fa-edit"
                 })
-              })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                title: "Excluir categoria " + category.name,
+                className: "btn btn-danger btn-sm",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+                  className: "fas fa-trash"
+                })
+              })]
             })]
           }, category.id);
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tr", {
@@ -775,6 +794,27 @@ function NewCategory() {
         children: loading ? "Criando..." : "Criar Categoria"
       })]
     })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/categories/ViewCategory.jsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/pages/categories/ViewCategory.jsx ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ViewCategory)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function ViewCategory() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+    children: "View Category"
   });
 }
 
