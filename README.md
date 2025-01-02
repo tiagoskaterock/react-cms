@@ -5,7 +5,7 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-00FF00?style=flat-square&logo=bootstrap&logoColor=white)](https://bootstrap.com/)
 [![MySQL](https://img.shields.io/badge/MySQL-FFFF00?style=flat-square&logo=mysql&logoColor=black)](https://mysql.com/)
 
-🎉 Este é um **CMS (Content Management System)** desenvolvido com **Laravel** para o backend e **React** para o frontend. Ele permite gerenciar conteúdo de forma simples e eficaz com uma interface moderna.
+🎉 Este é um **CMS (Content Management System)** desenvolvido com **Laravel** para o backend e **React** para o frontend. Ele permite gerenciar conteúdo de forma simples e eficaz com uma interface moderna em página única.
 
 ---
 
@@ -19,10 +19,21 @@
 
 ## ✨ Funcionalidades (Até o momento)
 - 📊 **Dashboard inicial** com cartões com links e mostrando contadores de categorias, posts e usuários
-- 👥 **Cadastro de usuários**
+
+<img src="preview/dashboard.png" alt="Dashboard" />
+
+- **Sidebar:** Links para dashboard, categorias, posts e usuários
+
+- 👥 **Usuários:** Cadastro e visualização
+
 - 🔑 **Login**
-- 📂 **Cadastro, visualização e atualização das categorias**
-- 📝 **Cadastro de postagens**
+
+
+- 📂 **Categorias:** Cadastro, visualização e atualização
+<img src="preview/categorias.png" alt="Categorias" />
+
+- 📝 **Postagens:** Cadastro
+<img src="preview/posts.png" alt="Cadastro de Novo Posts">
 
 ---
 
