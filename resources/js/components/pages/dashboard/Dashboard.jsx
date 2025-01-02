@@ -7,6 +7,7 @@ export default function Dashboard() {
 
     const [totalCategories, setTotalCategories] = useState(0);
     const [totalPosts, setTotalPosts] = useState(0);
+    const [totalUsers, setTotalUsers] = useState(0);
 
     // Total de categorias pela API
     useEffect(() => {
@@ -32,6 +33,18 @@ export default function Dashboard() {
             });
     }, []);
 
+    // Total de users pela API
+    useEffect(() => {
+        axios
+            .get('/api/getTotalUsers')
+            .then(response => {
+                setTotalUsers(response.data);
+            })
+            .catch(error => {
+                console.error("Erro ao buscar o total de users:", error);
+            });
+    }, []);
+
     return (
         <div className="container-fluid">
             <PageHeading title="Dashboard" />
@@ -51,6 +64,14 @@ export default function Dashboard() {
                     icon="fas fa-blog"
                     styleClass="primary"
                     page="allPosts"
+                />
+
+                <MainCard
+                    title="Usuários"
+                    value={totalUsers}
+                    icon="fas fa-users"
+                    styleClass="primary"
+                    page="allUsers"
                 />
             </div>
 

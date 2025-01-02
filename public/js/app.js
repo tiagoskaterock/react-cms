@@ -146,7 +146,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/posts/AllPosts.jsx */ "./resources/js/components/pages/posts/AllPosts.jsx");
 /* harmony import */ var _pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/posts/NewPost.jsx */ "./resources/js/components/pages/posts/NewPost.jsx");
 /* harmony import */ var _pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pages/categories/ViewCategory.jsx */ "./resources/js/components/pages/categories/ViewCategory.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_users_AllUsers_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pages/users/AllUsers.jsx */ "./resources/js/components/pages/users/AllUsers.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -162,9 +164,9 @@ function MainContent() {
   var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_1__.usePage)(),
     currentPage = _usePage.currentPage; // Obtém o estado global para decidir a página    
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     id: "content",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {}), currentPage === "viewCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__["default"], {}), currentPage === "editCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_categories_EditCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {}), currentPage === "newPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {}), currentPage === "viewCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__["default"], {}), currentPage === "editCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_categories_EditCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {}), currentPage === "newPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {}), currentPage === "allUsers" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_users_AllUsers_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {})]
   });
 }
 
@@ -1026,6 +1028,10 @@ function Dashboard() {
     _useState4 = _slicedToArray(_useState3, 2),
     totalPosts = _useState4[0],
     setTotalPosts = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState6 = _slicedToArray(_useState5, 2),
+    totalUsers = _useState6[0],
+    setTotalUsers = _useState6[1];
 
   // Total de categorias pela API
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
@@ -1042,6 +1048,15 @@ function Dashboard() {
       setTotalPosts(response.data);
     })["catch"](function (error) {
       console.error("Erro ao buscar o total de posts:", error);
+    });
+  }, []);
+
+  // Total de users pela API
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('/api/getTotalUsers').then(function (response) {
+      setTotalUsers(response.data);
+    })["catch"](function (error) {
+      console.error("Erro ao buscar o total de users:", error);
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -1062,6 +1077,12 @@ function Dashboard() {
         icon: "fas fa-blog",
         styleClass: "primary",
         page: "allPosts"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_MainCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Usu\xE1rios",
+        value: totalUsers,
+        icon: "fas fa-users",
+        styleClass: "primary",
+        page: "allUsers"
       })]
     })]
   });
@@ -1427,6 +1448,27 @@ function NewPost() {
         children: loading ? "Criando..." : "Criar Post"
       })]
     })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/users/AllUsers.jsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/pages/users/AllUsers.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AllUsers)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function AllUsers() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
+    children: "All Users"
   });
 }
 
