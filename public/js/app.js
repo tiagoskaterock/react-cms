@@ -1261,6 +1261,8 @@ function AllPosts() {
             children: "#"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
             children: "Nome"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+            children: "..."
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
@@ -1270,6 +1272,38 @@ function AllPosts() {
               children: index + 1
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
               children: post.name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                title: "Visualizar post " + post.name,
+                className: "btn btn-info btn-sm mr-1"
+                // onClick={() => {
+                //     setSelectedpostId(post.id); // Define o ID da post selecionada
+                //     setCurrentPage("viewpost"); // Altera a página para a de edição
+                // }}
+                ,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+                  className: "fas fa-eye"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                title: "Editar post " + post.name,
+                className: "btn btn-sm btn-primary mr-1"
+                // onClick={() => {
+                //     setSelectedpostId(post.id); // Define o ID da post selecionada
+                //     setCurrentPage("editpost"); // Altera a página para a de edição
+                // }}
+                ,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+                  className: "fas fa-edit"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                title: "Excluir post " + post.name,
+                className: "btn btn-danger btn-sm"
+                // onClick={() => deletepost(post.id)}
+                ,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+                  className: "fas fa-trash"
+                })
+              })]
             })]
           }, post.id);
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tr", {
@@ -1567,6 +1601,8 @@ function AllUsers() {
             children: "#"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
             children: "Nome"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+            children: "..."
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
@@ -1576,6 +1612,38 @@ function AllUsers() {
               children: index + 1
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
               children: user.name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                title: "Visualizar usuário " + user.name,
+                className: "btn btn-info btn-sm mr-1"
+                // onClick={() => {
+                //     setSelecteduserId(user.id); // Define o ID da user selecionada
+                //     setCurrentPage("viewuser"); // Altera a página para a de edição
+                // }}
+                ,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+                  className: "fas fa-eye"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                title: "Editar usuário " + user.name,
+                className: "btn btn-sm btn-primary mr-1"
+                // onClick={() => {
+                //     setSelecteduserId(user.id); // Define o ID da user selecionada
+                //     setCurrentPage("edituser"); // Altera a página para a de edição
+                // }}
+                ,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+                  className: "fas fa-edit"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                title: "Excluir usuário " + user.name,
+                className: "btn btn-danger btn-sm"
+                // onClick={() => deleteuser(post.id)}
+                ,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+                  className: "fas fa-trash"
+                })
+              })]
             })]
           }, user.id);
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tr", {
