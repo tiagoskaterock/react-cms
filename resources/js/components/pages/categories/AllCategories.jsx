@@ -7,6 +7,9 @@ import { usePage } from "../../../contexts/PageContent.js"; // Importe o hook
 import PageNavigation from "../../navbar/PageNavigation.jsx";
 import BtnCreate from "../../buttons/BtnCreate.jsx";
 import Table from "../../table/Table.jsx";
+import BtnView from "../../buttons/BtnView.jsx";
+import BtnEdit from "../../buttons/BtnEdit.jsx";
+import BtnDelete from "../../buttons/BtnDelete.jsx";
 
 export default function AllCategories() {
 
@@ -58,7 +61,6 @@ export default function AllCategories() {
     }
   };
 
-
   return (
     <div className="container-fluid">
 
@@ -95,35 +97,26 @@ export default function AllCategories() {
                   <td>{category.name}</td>
                   <td>
 
-                    <button
+                    <BtnView
                       title={"Visualizar categoria " + category.name}
-                      className="btn btn-info btn-sm mr-1"
                       onClick={() => {
                         setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
                         setCurrentPage("viewCategory"); // Altera a página para a de edição
-                      }}>
-                      <i className="fas fa-eye"></i>
-                    </button>
+                      }}
+                    />
 
-                    <button
+                    <BtnEdit
                       title={"Editar categoria " + category.name}
-                      className="btn btn-sm btn-primary mr-1"
                       onClick={() => {
                         setSelectedCategoryId(category.id); // Define o ID da categoria selecionada
                         setCurrentPage("editCategory"); // Altera a página para a de edição
                       }}
-                    >
-                      <i className="fas fa-edit"></i>
-                    </button>
+                    />
 
-                    <button
+                    <BtnDelete
                       title={"Excluir categoria " + category.name}
-                      className="btn btn-danger btn-sm"
                       onClick={() => deleteCategory(category.id)}
-                    >
-                      <i className="fas fa-trash"></i>
-                    </button>
-
+                    />
 
                   </td>
                 </tr>
