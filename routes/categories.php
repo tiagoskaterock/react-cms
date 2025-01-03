@@ -15,3 +15,5 @@ Route::get('/api/viewCategory/{id}', [CategoryController::class, 'viewCategory']
 Route::patch('/api/updateCategory/{id}', [CategoryController::class, 'updateCategory']);
 
 Route::get('/api/totalCategories', [CategoryController::class, 'totalCategories']);
+
+Route::delete('/api/deleteCategory/{id}', [CategoryController::class, 'deleteCategory']);

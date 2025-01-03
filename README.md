@@ -29,7 +29,7 @@
 - 🔑 **Login**
 
 
-- 📂 **Categorias:** Cadastro, visualização e atualização
+- 📂 **Categorias:** Cadastro, visualização, atualização e exclusão
 <img src="preview/categorias.png" alt="Categorias" />
 
 - 📝 **Postagens:** Cadastro

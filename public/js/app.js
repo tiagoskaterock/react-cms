@@ -350,6 +350,33 @@ function AllCategories() {
     });
   }, []); // Executa apenas uma vez ao montar o componente
 
+  var deleteCategory = function deleteCategory(id) {
+    if (window.confirm("Tem certeza que deseja excluir esta categoria?")) {
+      // Obter o CSRF token do meta tag
+      var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+      fetch("/api/deleteCategory/".concat(id), {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-TOKEN": csrfToken // Inclui o token CSRF
+        }
+      }).then(function (response) {
+        if (!response.ok) {
+          throw new Error("Erro ao excluir categoria");
+        }
+        return response.json();
+      }).then(function (data) {
+        alert(data.message);
+        // Atualiza a lista de categorias após a exclusão
+        setCategories(categories.filter(function (category) {
+          return category.id !== id;
+        }));
+      })["catch"](function (error) {
+        console.error("Erro:", error);
+        alert("Não foi possível excluir a categoria.");
+      });
+    }
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     className: "container-fluid",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -383,7 +410,7 @@ function AllCategories() {
         children: categories.length > 0 ? categories.map(function (category, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
-              children: index + 1
+              children: category.id
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
               children: category.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("td", {
@@ -410,6 +437,9 @@ function AllCategories() {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                 title: "Excluir categoria " + category.name,
                 className: "btn btn-danger btn-sm",
+                onClick: function onClick() {
+                  return deleteCategory(category.id);
+                },
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
                   className: "fas fa-trash"
                 })

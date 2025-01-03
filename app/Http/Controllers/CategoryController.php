@@ -126,4 +126,21 @@ class CategoryController extends Controller
             return response()->json(['message' => 'Categoria não encontrada.'], 404);
         }
     }
+
+    public function deleteCategory($id)
+    {
+        try {
+            $category = Category::find($id);
+
+            if (!$category) {
+                return response()->json(['message' => 'Categoria não encontrada'], 404);
+            }
+
+            $category->delete();
+
+            return response()->json(['message' => 'Categoria excluída com sucesso']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Erro ao excluir categoria', 'error' => $e->getMessage()], 500);
+        }
+    }
 }

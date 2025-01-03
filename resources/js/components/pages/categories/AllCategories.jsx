@@ -28,6 +28,37 @@ export default function AllCategories() {
       });
   }, []); // Executa apenas uma vez ao montar o componente
 
+  const deleteCategory = (id) => {
+    if (window.confirm("Tem certeza que deseja excluir esta categoria?")) {
+      // Obter o CSRF token do meta tag
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+
+      fetch(`/api/deleteCategory/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-TOKEN": csrfToken, // Inclui o token CSRF
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erro ao excluir categoria");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          alert(data.message);
+          // Atualiza a lista de categorias após a exclusão
+          setCategories(categories.filter((category) => category.id !== id));
+        })
+        .catch((error) => {
+          console.error("Erro:", error);
+          alert("Não foi possível excluir a categoria.");
+        });
+    }
+  };
+
+
   return (
     <div className="container-fluid">
 
@@ -60,7 +91,7 @@ export default function AllCategories() {
             {categories.length > 0 ? (
               categories.map((category, index) => (
                 <tr key={category.id}>
-                  <td>{index + 1}</td>
+                  <td>{category.id}</td>
                   <td>{category.name}</td>
                   <td>
 
@@ -87,10 +118,13 @@ export default function AllCategories() {
 
                     <button
                       title={"Excluir categoria " + category.name}
-                      className="btn btn-danger btn-sm">
+                      className="btn btn-danger btn-sm"
+                      onClick={() => deleteCategory(category.id)}
+                    >
                       <i className="fas fa-trash"></i>
                     </button>
-                    
+
+
                   </td>
                 </tr>
               ))
