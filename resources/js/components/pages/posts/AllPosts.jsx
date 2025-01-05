@@ -6,6 +6,8 @@ import Breadcrumb from "../../navbar/Breadcrumb";
 import BreadcrumbActive from "../../navbar/BreadcrumbActive";
 import Table from "../../table/Table";
 import BtnCreate from "../../buttons/BtnCreate";
+import BtnEdit from "../../buttons/BtnEdit";
+import BtnDelete from "../../buttons/BtnDelete";
 
 export default function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -59,35 +61,28 @@ export default function AllPosts() {
                   <td>{index + 1}</td>
                   <td>{post.name}</td>
                   <td>
-                    <button
+
+                    <BtnView
                       title={"Visualizar post " + post.name}
-                      className="btn btn-info btn-sm mr-1"
                     // onClick={() => {
                     //     setSelectedpostId(post.id); // Define o ID da post selecionada
                     //     setCurrentPage("viewpost"); // Altera a página para a de edição
                     // }}
-                    >
-                      <i className="fas fa-eye"></i>
-                    </button>
+                    />
 
-                    <button
-                      title={"Editar post " + post.name}
-                      className="btn btn-sm btn-primary mr-1"
-                    // onClick={() => {
-                    //     setSelectedpostId(post.id); // Define o ID da post selecionada
-                    //     setCurrentPage("editpost"); // Altera a página para a de edição
-                    // }}
-                    >
-                      <i className="fas fa-edit"></i>
-                    </button>
+                    <BtnEdit
+                      title={"Editar post " + post.title}
+                      // onClick={() => {
+                      //   setSelectedCategoryId(category.id); // Define o ID da post selecionada
+                      //   setCurrentPage("editCategory"); // Altera a página para a de edição
+                      // }}
+                    />
 
-                    <button
-                      title={"Excluir post " + post.name}
-                      className="btn btn-danger btn-sm"
-                    // onClick={() => deletepost(post.id)}
-                    >
-                      <i className="fas fa-trash"></i>
-                    </button>
+                    <BtnDelete
+                      title={"Excluir post " + post.title}
+                      // onClick={() => deleteCategory(category.id)}
+                    />
+
                   </td>
                 </tr>
               ))
