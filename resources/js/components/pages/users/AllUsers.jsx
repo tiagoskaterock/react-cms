@@ -59,35 +59,26 @@ export default function AllUsers() {
                   <td>{index + 1}</td>
                   <td>{user.name}</td>
                   <td>
-                    <button
-                      title={"Visualizar usuário " + user.name}
-                      className="btn btn-info btn-sm mr-1"
+                  <BtnView
+                      title={"Visualizar usuário" + user.name}
                     // onClick={() => {
-                    //     setSelecteduserId(user.id); // Define o ID da user selecionada
-                    //     setCurrentPage("viewuser"); // Altera a página para a de edição
+                    //     setSelectedpostId(user.id); // Define o ID da usuárioselecionada
+                    //     setCurrentPage("viewpost"); // Altera a página para a de edição
                     // }}
-                    >
-                      <i className="fas fa-eye"></i>
-                    </button>
+                    />
 
-                    <button
-                      title={"Editar usuário " + user.name}
-                      className="btn btn-sm btn-primary mr-1"
-                    // onClick={() => {
-                    //     setSelecteduserId(user.id); // Define o ID da user selecionada
-                    //     setCurrentPage("edituser"); // Altera a página para a de edição
-                    // }}
-                    >
-                      <i className="fas fa-edit"></i>
-                    </button>
+                    <BtnEdit
+                      title={"Editar usuário" + user.name}
+                      // onClick={() => {
+                      //   setSelectedCategoryId(category.id); // Define o ID da usuárioselecionada
+                      //   setCurrentPage("editCategory"); // Altera a página para a de edição
+                      // }}
+                    />
 
-                    <button
-                      title={"Excluir usuário " + user.name}
-                      className="btn btn-danger btn-sm"
-                    // onClick={() => deleteuser(post.id)}
-                    >
-                      <i className="fas fa-trash"></i>
-                    </button>
+                    <BtnDelete
+                      title={"Excluir usuário" + user.name}
+                      // onClick={() => deleteCategory(category.id)}
+                    />
                   </td>
                 </tr>
               ))
