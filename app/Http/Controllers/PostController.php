@@ -12,11 +12,22 @@ class PostController extends Controller
      * Retorna todos os posts
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function Allposts() : Collection
+    public function Allposts(): Collection
     {
         return Post::all();
     }
-    
+
+    public function viewPost($id)
+    {
+        try {
+            $post = Post::with('category')->findOrFail($id); // Inclui a categoria nos dados
+            return response()->json($post, 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Post não encontrado.'], 404);
+        }
+    }
+
+
     /**
      * retorna o total de posts
      * @param \Illuminate\Http\Request $request
@@ -25,8 +36,8 @@ class PostController extends Controller
     public function totalPosts(Request $request)
     {
         return Post::count();
-    }   
-    
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([

@@ -6,10 +6,13 @@ import Breadcrumb from "../../navbar/Breadcrumb";
 import BreadcrumbActive from "../../navbar/BreadcrumbActive";
 import Table from "../../table/Table";
 import BtnCreate from "../../buttons/BtnCreate";
+import BtnView from "../../buttons/BtnView";
 import BtnEdit from "../../buttons/BtnEdit";
 import BtnDelete from "../../buttons/BtnDelete";
+import { usePage } from "../../../contexts/PageContent.js"; // Importe o hook
 
 export default function AllPosts() {
+  const { setSelectedPostId, setCurrentPage } = usePage();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -63,24 +66,24 @@ export default function AllPosts() {
                   <td>
 
                     <BtnView
-                      title={"Visualizar post " + post.name}
-                    // onClick={() => {
-                    //     setSelectedpostId(post.id); // Define o ID da post selecionada
-                    //     setCurrentPage("viewpost"); // Altera a página para a de edição
-                    // }}
+                      title={"Visualizar post teste" + post.name}
+                      onClick={() => {
+                        setSelectedPostId(post.id);
+                        setCurrentPage("viewPost");
+                      }}
                     />
 
                     <BtnEdit
                       title={"Editar post " + post.title}
-                      // onClick={() => {
-                      //   setSelectedCategoryId(category.id); // Define o ID da post selecionada
-                      //   setCurrentPage("editCategory"); // Altera a página para a de edição
-                      // }}
+                    // onClick={() => {
+                    //   setSelectedCategoryId(category.id); // Define o ID da post selecionada
+                    //   setCurrentPage("editCategory"); // Altera a página para a de edição
+                    // }}
                     />
 
                     <BtnDelete
                       title={"Excluir post " + post.title}
-                      // onClick={() => deleteCategory(category.id)}
+                    // onClick={() => deleteCategory(category.id)}
                     />
 
                   </td>

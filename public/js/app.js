@@ -226,7 +226,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pages/categories/ViewCategory.jsx */ "./resources/js/components/pages/categories/ViewCategory.jsx");
 /* harmony import */ var _pages_users_AllUsers_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pages/users/AllUsers.jsx */ "./resources/js/components/pages/users/AllUsers.jsx");
 /* harmony import */ var _pages_users_NewUser_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pages/users/NewUser.jsx */ "./resources/js/components/pages/users/NewUser.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_posts_ViewPost_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../pages/posts/ViewPost.jsx */ "./resources/js/components/pages/posts/ViewPost.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -244,9 +246,9 @@ function MainContent() {
   var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_1__.usePage)(),
     currentPage = _usePage.currentPage; // Obtém o estado global para decidir a página    
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
     id: "content",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {}), currentPage === "viewCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__["default"], {}), currentPage === "editCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_categories_EditCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {}), currentPage === "newPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {}), currentPage === "allUsers" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_users_AllUsers_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {}), currentPage === "newUser" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_users_NewUser_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_topBar_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), currentPage === "dashboard" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {}), currentPage === "allCategories" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_categories_AllCategories__WEBPACK_IMPORTED_MODULE_4__["default"], {}), currentPage === "newCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_categories_NewCategory_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {}), currentPage === "viewCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_categories_ViewCategory_jsx__WEBPACK_IMPORTED_MODULE_9__["default"], {}), currentPage === "editCategory" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_categories_EditCategory_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {}), currentPage === "allPosts" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_posts_AllPosts_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {}), currentPage === "viewPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_posts_ViewPost_jsx__WEBPACK_IMPORTED_MODULE_12__["default"], {}), currentPage === "newPost" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_posts_NewPost_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {}), currentPage === "allUsers" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_users_AllUsers_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {}), currentPage === "newUser" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_users_NewUser_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], {})]
   });
 }
 
@@ -1271,7 +1273,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navbar_BreadcrumbActive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../navbar/BreadcrumbActive */ "./resources/js/components/navbar/BreadcrumbActive.jsx");
 /* harmony import */ var _table_Table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../table/Table */ "./resources/js/components/table/Table.jsx");
 /* harmony import */ var _buttons_BtnCreate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../buttons/BtnCreate */ "./resources/js/components/buttons/BtnCreate.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _buttons_BtnView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../buttons/BtnView */ "./resources/js/components/buttons/BtnView.jsx");
+/* harmony import */ var _buttons_BtnEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../buttons/BtnEdit */ "./resources/js/components/buttons/BtnEdit.jsx");
+/* harmony import */ var _buttons_BtnDelete__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../buttons/BtnDelete */ "./resources/js/components/buttons/BtnDelete.jsx");
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -1287,7 +1293,14 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
+
+ // Importe o hook
+
 function AllPosts() {
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_11__.usePage)(),
+    setSelectedPostId = _usePage.setSelectedPostId,
+    setCurrentPage = _usePage.setCurrentPage;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     posts = _useState2[0],
@@ -1308,78 +1321,63 @@ function AllPosts() {
     });
   }, []); // Executa apenas uma vez ao montar o componente
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "container-fluid",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_navbar_PageNavigation__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_navbar_PageNavigation__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_content_PageHeading__WEBPACK_IMPORTED_MODULE_2__["default"], {
         title: "Posts"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_navbar_Breadcrumb__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_navbar_Breadcrumbs__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_navbar_Breadcrumb__WEBPACK_IMPORTED_MODULE_4__["default"], {
           page: "dashboard",
           title: "In\xEDcio"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_navbar_BreadcrumbActive__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_navbar_BreadcrumbActive__WEBPACK_IMPORTED_MODULE_5__["default"], {
           title: "Posts"
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_buttons_BtnCreate__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_buttons_BtnCreate__WEBPACK_IMPORTED_MODULE_7__["default"], {
       title: "Novo Post",
       page: "newPost"
-    }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+    }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("p", {
       children: "Carregando posts..."
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_table_Table__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("thead", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_table_Table__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("thead", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("th", {
             children: "#"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("th", {
             children: "Nome"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("th", {
             children: "..."
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("tbody", {
         children: posts.length > 0 ? posts.map(function (post, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("tr", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("td", {
               children: index + 1
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("td", {
               children: post.name
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("td", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                title: "Visualizar post " + post.name,
-                className: "btn btn-info btn-sm mr-1"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_buttons_BtnView__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                title: "Visualizar post teste" + post.name,
+                onClick: function onClick() {
+                  setSelectedPostId(post.id);
+                  setCurrentPage("viewPost");
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_buttons_BtnEdit__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                title: "Editar post " + post.title
                 // onClick={() => {
-                //     setSelectedpostId(post.id); // Define o ID da post selecionada
-                //     setCurrentPage("viewpost"); // Altera a página para a de edição
+                //   setSelectedCategoryId(category.id); // Define o ID da post selecionada
+                //   setCurrentPage("editCategory"); // Altera a página para a de edição
                 // }}
-                ,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                  className: "fas fa-eye"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                title: "Editar post " + post.name,
-                className: "btn btn-sm btn-primary mr-1"
-                // onClick={() => {
-                //     setSelectedpostId(post.id); // Define o ID da post selecionada
-                //     setCurrentPage("editpost"); // Altera a página para a de edição
-                // }}
-                ,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                  className: "fas fa-edit"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                title: "Excluir post " + post.name,
-                className: "btn btn-danger btn-sm"
-                // onClick={() => deletepost(post.id)}
-                ,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                  className: "fas fa-trash"
-                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_buttons_BtnDelete__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                title: "Excluir post " + post.title
+                // onClick={() => deleteCategory(category.id)}
               })]
             })]
           }, post.id);
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tr", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("tr", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("td", {
             colSpan: "2",
             children: "Nenhum post encontrado."
           })
@@ -1591,6 +1589,208 @@ function NewPost() {
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/posts/ViewPost.jsx":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/pages/posts/ViewPost.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ViewPost)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _content_PageHeading_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../content/PageHeading.jsx */ "./resources/js/components/content/PageHeading.jsx");
+/* harmony import */ var _navbar_Breadcrumbs_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../navbar/Breadcrumbs.jsx */ "./resources/js/components/navbar/Breadcrumbs.jsx");
+/* harmony import */ var _navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../navbar/Breadcrumb.jsx */ "./resources/js/components/navbar/Breadcrumb.jsx");
+/* harmony import */ var _navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../navbar/BreadcrumbActive.jsx */ "./resources/js/components/navbar/BreadcrumbActive.jsx");
+/* harmony import */ var _navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../navbar/PageNavigation.jsx */ "./resources/js/components/navbar/PageNavigation.jsx");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/format.js");
+/* harmony import */ var date_fns_locale_pt_BR__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns/locale/pt-BR */ "./node_modules/date-fns/locale/pt-BR.js");
+/* harmony import */ var _contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../contexts/PageContent.js */ "./resources/js/contexts/PageContent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+
+
+ // Importe o hook
+
+function ViewPost() {
+  var _post$category;
+  var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_6__.usePage)(),
+    selectedPostId = _usePage.selectedPostId,
+    setSelectedPostId = _usePage.setSelectedPostId,
+    setCurrentPage = _usePage.setCurrentPage; // Atualizado para Post
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState2 = _slicedToArray(_useState, 2),
+    post = _useState2[0],
+    setPost = _useState2[1]; // Estado para o post
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1]; // Estado para indicar carregamento
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState6 = _slicedToArray(_useState5, 2),
+    message = _useState6[0],
+    setMessage = _useState6[1]; // Estado para mensagens de sucesso ou erro
+
+  // Atualiza a página atual e busca o post ao montar
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setCurrentPage("viewPost");
+    if (selectedPostId) {
+      fetchPost();
+    }
+  }, [selectedPostId]);
+
+  // Função para buscar os dados do post
+  var fetchPost = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var response, data;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            setLoading(true);
+            setMessage(""); // Limpa mensagens anteriores
+            _context.prev = 2;
+            _context.next = 5;
+            return fetch("/api/viewPost/".concat(selectedPostId));
+          case 5:
+            response = _context.sent;
+            if (response.ok) {
+              _context.next = 8;
+              break;
+            }
+            throw new Error("Erro ao buscar post. Verifique o ID e tente novamente.");
+          case 8:
+            _context.next = 10;
+            return response.json();
+          case 10:
+            data = _context.sent;
+            setPost(data); // Salva os dados do post no estado
+            _context.next = 18;
+            break;
+          case 14:
+            _context.prev = 14;
+            _context.t0 = _context["catch"](2);
+            setMessage(_context.t0.message || "Erro desconhecido ao buscar post.");
+            console.error(_context.t0);
+          case 18:
+            _context.prev = 18;
+            setLoading(false);
+            return _context.finish(18);
+          case 21:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[2, 14, 18, 21]]);
+    }));
+    return function fetchPost() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  var formatDate = function formatDate(dateString) {
+    if (!dateString) return "Carregando...";
+    try {
+      return (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.format)(new Date(dateString), "dd 'de' MMMM 'de' yyyy, HH:mm", {
+        locale: date_fns_locale_pt_BR__WEBPACK_IMPORTED_MODULE_9__["default"]
+      });
+    } catch (error) {
+      console.error("Erro ao formatar a data:", error);
+      return dateString;
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    className: "container-fluid",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_navbar_PageNavigation_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_content_PageHeading_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Post"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_navbar_Breadcrumbs_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          page: "dashboard",
+          title: "In\xEDcio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_Breadcrumb_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          page: "allPosts",
+          title: "Posts"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_navbar_BreadcrumbActive_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          title: post.name || "Carregando..."
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          className: "mr-1",
+          children: "T\xEDtulo: "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          children: post.name || "Carregando..."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          className: "mr-1",
+          children: "Conte\xFAdo: "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          children: post.body || "Carregando..."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          className: "mr-1",
+          children: "Categoria: "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          children: ((_post$category = post.category) === null || _post$category === void 0 ? void 0 : _post$category.name) || "Carregando..."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          className: "mr-1",
+          children: "Criado: "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          children: formatDate(post.created_at) || "Carregando..."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          className: "mr-1",
+          children: "Atualizado: "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          children: formatDate(post.updated_at) || "Carregando..."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("button", {
+          title: "Editar post " + post.name,
+          className: "btn btn-primary mr-1"
+          // onClick={() => {
+          //   setSelectedPostId(post.id); // Define o ID do post selecionado
+          //   setCurrentPage("editPost"); // Altera a página para a de edição
+          // }}
+          ,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+            className: "fas fa-edit"
+          }), ' Editar']
+        })
+      })]
+    }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: "Carregando..."
+    }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: message
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/users/AllUsers.jsx":
 /*!**********************************************************!*\
   !*** ./resources/js/components/pages/users/AllUsers.jsx ***!
@@ -1685,36 +1885,21 @@ function AllUsers() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
               children: user.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("td", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                title: "Visualizar usuário " + user.name,
-                className: "btn btn-info btn-sm mr-1"
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(BtnView, {
+                title: "Visualizar usuário" + user.name
                 // onClick={() => {
-                //     setSelecteduserId(user.id); // Define o ID da user selecionada
-                //     setCurrentPage("viewuser"); // Altera a página para a de edição
+                //     setSelectedpostId(user.id); // Define o ID da usuárioselecionada
+                //     setCurrentPage("viewpost"); // Altera a página para a de edição
                 // }}
-                ,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                  className: "fas fa-eye"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                title: "Editar usuário " + user.name,
-                className: "btn btn-sm btn-primary mr-1"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(BtnEdit, {
+                title: "Editar usuário" + user.name
                 // onClick={() => {
-                //     setSelecteduserId(user.id); // Define o ID da user selecionada
-                //     setCurrentPage("edituser"); // Altera a página para a de edição
+                //   setSelectedCategoryId(category.id); // Define o ID da usuárioselecionada
+                //   setCurrentPage("editCategory"); // Altera a página para a de edição
                 // }}
-                ,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                  className: "fas fa-edit"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                title: "Excluir usuário " + user.name,
-                className: "btn btn-danger btn-sm"
-                // onClick={() => deleteuser(post.id)}
-                ,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                  className: "fas fa-trash"
-                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(BtnDelete, {
+                title: "Excluir usuário" + user.name
+                // onClick={() => deleteCategory(category.id)}
               })]
             })]
           }, user.id);
@@ -44490,12 +44675,20 @@ function PageProvider(_ref) {
     _useState4 = _slicedToArray(_useState3, 2),
     selectedCategoryId = _useState4[0],
     setSelectedCategoryId = _useState4[1];
+
+  // Estado para armazenar o ID do post selecionado
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    selectedPostId = _useState6[0],
+    setSelectedPostId = _useState6[1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(PageContext.Provider, {
     value: {
       currentPage: currentPage,
       setCurrentPage: setCurrentPage,
       selectedCategoryId: selectedCategoryId,
-      setSelectedCategoryId: setSelectedCategoryId
+      setSelectedCategoryId: setSelectedCategoryId,
+      selectedPostId: selectedPostId,
+      setSelectedPostId: setSelectedPostId // Adiciona o estado para posts
     },
     children: children
   });

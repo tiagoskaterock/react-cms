@@ -10,6 +10,7 @@ import NewPost from "../pages/posts/NewPost.jsx";
 import ViewCategory from "../pages/categories/ViewCategory.jsx";
 import AllUsers from "../pages/users/AllUsers.jsx";
 import NewUser from "../pages/users/NewUser.jsx";
+import ViewPost from "../pages/posts/ViewPost.jsx";
 
 export default function MainContent() {
     const { currentPage } = usePage(); // Obtém o estado global para decidir a página    
@@ -25,6 +26,7 @@ export default function MainContent() {
             {currentPage === "viewCategory" && <ViewCategory />}
             {currentPage === "editCategory" && <EditCategory />}
             {currentPage === "allPosts" && <AllPosts />}
+            {currentPage === "viewPost" && <ViewPost />}
             {currentPage === "newPost" && <NewPost />}
             {currentPage === "allUsers" && <AllUsers />}
             {currentPage === "newUser" && <NewUser />}

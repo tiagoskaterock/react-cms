@@ -11,12 +11,17 @@ export function PageProvider({ children }) {
     // Estado para armazenar o ID da categoria selecionada
     const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
+    // Estado para armazenar o ID do post selecionado
+    const [selectedPostId, setSelectedPostId] = useState(null);
+
     return (
         <PageContext.Provider value={{ 
             currentPage, 
             setCurrentPage, 
             selectedCategoryId, 
-            setSelectedCategoryId 
+            setSelectedCategoryId,
+            selectedPostId, 
+            setSelectedPostId, // Adiciona o estado para posts
         }}>
             {children}
         </PageContext.Provider>
