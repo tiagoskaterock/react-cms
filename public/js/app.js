@@ -167,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function PageHeading(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "d-sm-flex align-items-center justify-content-between mb-4 col-md-6",
+    className: "d-sm-flex align-items-center justify-content-between mb-4 col-md-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
       className: "h3 mb-0 text-gray-800",
       children: props.title
@@ -333,7 +333,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Breadcrumbs(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("nav", {
-    className: "col-md-6",
+    className: "col-md-8",
     "aria-label": "breadcrumb",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ol", {
       className: "breadcrumb float-right",

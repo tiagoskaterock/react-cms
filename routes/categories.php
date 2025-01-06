@@ -6,7 +6,7 @@ use App\Http\Controllers\CategoryController;
 // Adicione suas rotas de API aqui
 Route::post('/api/categories', [CategoryController::class, 'store']);
 
-Route::get('/api/AllCategories', [CategoryController::class, 'allCategories']);
+Route::get('/api/AllCategories', [CategoryController::class, 'allCategories'])->name('allCategories');
 
 Route::get('/api/EditCategory/{id}', [CategoryController::class, 'editCategory']);
 

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CategoryController extends Controller
 {
+    /**
+     * get all categories
+     * @return \Illuminate\Database\Eloquent\Collection
+     * # tested
+     */
     public function allCategories(): Collection
     {
         return Category::all();

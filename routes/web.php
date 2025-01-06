@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/admin', function () {
     return view('admin');
-})->middleware(['auth', 'verified'])->name('admin');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
