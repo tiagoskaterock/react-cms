@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\CategoryFactory;
 
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use App\Models\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -10,7 +11,7 @@ class DefinitionTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function it_creates_a_valid_category_instance()
     {
         // Arrange: Gere uma instância de categoria usando a factory
@@ -21,7 +22,7 @@ class DefinitionTest extends TestCase
         $this->assertNotEmpty($category->name); // Garante que 'name' não está vazio
     }
 
-    /** @test */
+    #[Test]
     public function it_persists_a_category_instance_in_the_database()
     {
         // Act: Crie e salve uma categoria no banco de dados
@@ -34,7 +35,7 @@ class DefinitionTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function it_creates_multiple_categories()
     {
         // Act: Crie múltiplas categorias
@@ -45,7 +46,7 @@ class DefinitionTest extends TestCase
         $this->assertDatabaseCount('categories', 5); // Garante que 5 categorias estão no banco
     }
 
-    /** @test */
+    #[Test]
     public function it_generates_unique_names_for_categories()
     {
         // Act: Gere duas categorias

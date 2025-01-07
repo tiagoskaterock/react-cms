@@ -3,6 +3,7 @@
 namespace Tests\Unit\CategoryController;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use App\Models\Category;
 
@@ -10,7 +11,7 @@ class AllCategoriesTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function it_should_return_all_categories()
     {
         // Arrange: Crie categorias no banco de dados de teste.
