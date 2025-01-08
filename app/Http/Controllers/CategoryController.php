@@ -21,6 +21,7 @@ class CategoryController extends Controller
     /**
      * Retorna o total de categorias
      * @return int
+     * #tested
      */
     public function totalCategories(): int
     {
