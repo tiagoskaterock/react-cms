@@ -9,20 +9,22 @@ import BtnCreate from "../../buttons/BtnCreate";
 import BtnView from "../../buttons/BtnView";
 import BtnEdit from "../../buttons/BtnEdit";
 import BtnDelete from "../../buttons/BtnDelete";
+import { usePage } from "../../../contexts/PageContent.js"; // Importe o hook
 
-export default function AllUsers() {
-  const [users, setUsers] = useState([]);
+export default function AllPosts() {
+  const { setSelectedPostId, setCurrentPage } = usePage();
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/allUsers")
+    fetch("/api/posts")
       .then((response) => response.json())
       .then((data) => {
-        setUsers(data);
+        setPosts(data);
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Erro ao buscar usuários:", error);
+        console.error("Erro ao buscar posts:", error);
         setLoading(false);
       });
   }, []); // Executa apenas uma vez ao montar o componente
@@ -32,20 +34,20 @@ export default function AllUsers() {
 
       <PageNavigation>
 
-        <PageHeading title="Usuários" />
+        <PageHeading title="Posts" />
 
         <Breadcrumbs>
           <Breadcrumb page="dashboard" title="Início" />
-          <BreadcrumbActive title="Usuários" />
+          <BreadcrumbActive title="Posts" />
         </Breadcrumbs>
 
       </PageNavigation>
 
-      <BtnCreate title="Novo Usuário" page="newUser" />
+      <BtnCreate title="Novo Post" page="newPost" />
 
       {/* Mostrar mensagem de carregamento */}
       {loading ? (
-        <p>Carregando usuários...</p>
+        <p>Carregando posts...</p>
       ) : (
         <Table>
           <thead>
@@ -56,38 +58,40 @@ export default function AllUsers() {
             </tr>
           </thead>
           <tbody>
-            {users.length > 0 ? (
-              users.map((user, index) => (
-                <tr key={user.id}>
+            {posts.length > 0 ? (
+              posts.map((post, index) => (
+                <tr key={post.id}>
                   <td>{index + 1}</td>
-                  <td>{user.name}</td>
+                  <td>{post.name}</td>
                   <td>
-                  <BtnView
-                      title={"Visualizar usuário" + user.name}
-                    // onClick={() => {
-                    //     setSelectedpostId(user.id); // Define o ID da usuárioselecionada
-                    //     setCurrentPage("viewpost"); // Altera a página para a de edição
-                    // }}
+
+                    <BtnView
+                      title={"Visualizar post teste" + post.name}
+                      onClick={() => {
+                        setSelectedPostId(post.id);
+                        setCurrentPage("viewPost");
+                      }}
                     />
 
                     <BtnEdit
-                      title={"Editar usuário" + user.name}
-                      // onClick={() => {
-                      //   setSelectedCategoryId(category.id); // Define o ID da usuárioselecionada
-                      //   setCurrentPage("editCategory"); // Altera a página para a de edição
-                      // }}
+                      title={"Editar post " + post.title}
+                    // onClick={() => {
+                    //   setSelectedCategoryId(category.id); // Define o ID da post selecionada
+                    //   setCurrentPage("editCategory"); // Altera a página para a de edição
+                    // }}
                     />
 
                     <BtnDelete
-                      title={"Excluir usuário" + user.name}
-                      // onClick={() => deleteCategory(category.id)}
+                      title={"Excluir post " + post.title}
+                    // onClick={() => deleteCategory(category.id)}
                     />
+
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="2">Nenhum usuário encontrado.</td>
+                <td colSpan="2">Nenhum post encontrado.</td>
               </tr>
             )}
           </tbody>
