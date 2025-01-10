@@ -5,6 +5,7 @@ import { usePage } from "../../../contexts/PageContent.js";
 import Breadcrumb from "../../navbar/Breadcrumb.jsx";
 import BreadcrumbActive from "../../navbar/BreadcrumbActive.jsx";
 import PageNavigation from "../../navbar/PageNavigation.jsx";
+import FormPost from "./FormPost.jsx";
 
 export default function NewPost() {
     const [categories, setCategories] = useState([]); // Estado para armazenar categorias
@@ -85,60 +86,14 @@ export default function NewPost() {
 
             {message && <div className="alert alert-info">{message}</div>}
 
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="postName">Título do Post</label>
-                    <input
-                        type="text"
-                        id="postName"
-                        className="form-control"
-                        value={postName}
-                        onChange={(e) => setPostName(e.target.value)}
-                        placeholder="Digite o título do post"
-                        required
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="postBody">Conteúdo do Post</label>
-                    <textarea
-                        id="postBody"
-                        className="form-control"
-                        value={postBody}
-                        onChange={(e) => setPostBody(e.target.value)}
-                        placeholder="Digite o conteúdo do post"
-                        required
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="categoryId">Categoria</label>
-                    <select
-                        id="categoryId"
-                        className="form-control"
-                        value={categoryId}
-                        onChange={(e) => setCategoryId(e.target.value)}
-                        required
-                    >
-                        <option value="" disabled>
-                            Selecione uma categoria
-                        </option>
-                        {categories.map((category) => (
-                            <option key={category.id} value={category.id}>
-                                {category.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={loading || !postName.trim() || !postBody.trim() || !categoryId}
-                >
-                    {loading ? "Criando..." : "Criar Post"}
-                </button>
-            </form>
+            <FormPost 
+                handleSubmit={handleSubmit}
+                postName={postName}
+                postBody={postBody}
+                categories={categories}
+                setCategoryId={setCategoryId}
+                loading={loading}
+            />
         </div>
     );
 }
