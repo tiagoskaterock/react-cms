@@ -7,7 +7,6 @@ export default function TopBar() {
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">      
       
       <SidebarToggleTop />
-      <TopBarSearch />
       <TopBarNavbar />
     
     </nav>

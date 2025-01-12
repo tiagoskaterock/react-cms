@@ -10,12 +10,6 @@ export default function TopBarNavbar() {
 
             <NavItemSearchDropdown />
 
-            <NavItemAlerts />
-
-            <NavItemMessages />
-
-            <TopBarDivider />
-
             <NavItemUser />
 
         </ul>

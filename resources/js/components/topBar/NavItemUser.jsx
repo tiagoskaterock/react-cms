@@ -39,15 +39,6 @@ export default function NavItemUser() {
             </a>
             {/* Dropdown - User Information */}
             <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-
-                <TopBarUserLink title="Perfil" href="#" icon="fas fa-user" />
-
-                <TopBarUserLink title="Ajustes" href="#" icon="fas fa-cogs" />
-
-                <TopBarUserLink title="Atividades" href="#" icon="fas fa-list" />
-
-                <TopBarDropdownDivider />
-
                 <TopBarLogoutButton />
             </div>
         </li>
