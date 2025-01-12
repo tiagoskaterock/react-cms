@@ -6,9 +6,9 @@
     <title>React no Laravel com Laravel Mix</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="website"></div>
     
     <!-- Inclua o JS compilado -->
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/website.js') }}"></script>
 </body>
 </html>
