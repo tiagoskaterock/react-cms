@@ -3,9 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+require __DIR__.'/website.php';
 
 Route::get('/admin', function () {
     return view('admin');
@@ -26,4 +24,3 @@ require __DIR__.'/posts.php';
 require __DIR__.'/users.php';
 
 require __DIR__.'/loggedUser.php';
-
