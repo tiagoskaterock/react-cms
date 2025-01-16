@@ -113,7 +113,7 @@ var Navbar = function Navbar() {
         className: "navbar-brand",
         href: "#",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          src: "https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png",
+          src: "img/react.svg",
           alt: "Logo",
           width: "50",
           height: "50",

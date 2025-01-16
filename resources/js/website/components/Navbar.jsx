@@ -7,7 +7,7 @@ const Navbar = () => {
         {/* Logo */}
         <a className="navbar-brand" href="#">
           <img
-            src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png"
+            src="img/react.svg"
             alt="Logo"
             width="50"
             height="50"
