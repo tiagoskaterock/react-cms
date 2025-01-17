@@ -1,4 +1,16 @@
+import { useState } from 'react';
+
 export default function PostForm(props) {
+
+  const [banner, setBanner] = useState(null); // Estado para armazenar o arquivo da imagem
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]; // Pega o primeiro arquivo selecionado
+    if (file) {
+      setBanner(file); // Atualiza o estado com o arquivo
+    }
+  };
+
   return (
     <form onSubmit={props.handleSubmit}>
       <div className="form-group">
@@ -25,6 +37,19 @@ export default function PostForm(props) {
           required
         />
       </div>
+
+      {/* Novo campo de input do tipo file */}
+      {/* <div className="form-group">
+        <label htmlFor="banner">Imagem (Banner)</label>
+        <input
+          type="file"
+          id="banner"
+          className="form-control"
+          onChange={handleFileChange} // Atualiza o estado com o arquivo
+          accept="image/*" // Aceita apenas imagens
+          required
+        />
+      </div> */}
 
       <div className="form-group">
         <label htmlFor="categoryId">Categoria</label>

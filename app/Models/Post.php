@@ -14,6 +14,7 @@ class Post extends Model
         'name', 
         'body',
         'category_id',
+        'banner',
     ];
 
     public function category() : BelongsTo
