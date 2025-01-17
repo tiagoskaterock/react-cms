@@ -44,6 +44,7 @@ export default function AllPosts() {
       </PageNavigation>
 
       <BtnCreate title="Novo Post" page="newPost" />
+      <BtnCreate title="Novo Post" page="newPost" />
 
       {/* Mostrar mensagem de carregamento */}
       {loading ? (

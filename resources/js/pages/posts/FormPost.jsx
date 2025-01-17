@@ -12,7 +12,7 @@ export default function FormPost(props) {
           placeholder="Digite o título do post"
           required
         />
-      </div>
+      </div>      
 
       <div className="form-group">
         <label htmlFor="postBody">Conteúdo do Post</label>
