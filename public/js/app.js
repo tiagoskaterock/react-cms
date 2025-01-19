@@ -2163,6 +2163,41 @@ function DashboardLink(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/sidebar/DashboardLinkHome.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/sidebar/DashboardLinkHome.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function DashboardHome(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+    className: "nav-item",
+    title: "Website",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+      className: "nav-link",
+      href: "/",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+        className: "fas fa-home"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        children: "Website"
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DashboardHome);
+
+/***/ }),
+
 /***/ "./resources/js/components/sidebar/Sidebar.jsx":
 /*!*****************************************************!*\
   !*** ./resources/js/components/sidebar/Sidebar.jsx ***!
@@ -2179,13 +2214,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DashboardLink__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DashboardLink */ "./resources/js/components/sidebar/DashboardLink.jsx");
 /* harmony import */ var _SidebarBrand__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SidebarBrand */ "./resources/js/components/sidebar/SidebarBrand.jsx");
 /* harmony import */ var _SidebarDivider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SidebarDivider */ "./resources/js/components/sidebar/SidebarDivider.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _DashboardLinkHome__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DashboardLinkHome */ "./resources/js/components/sidebar/DashboardLinkHome.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -2213,26 +2250,26 @@ function Sidebar() {
   var togglePages = function togglePages() {
     return setIsPagesOpen(!isPagesOpen);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ul", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
     className: "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion",
     id: "accordionSidebar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SidebarBrand__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SidebarDivider__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_SidebarBrand__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_SidebarDivider__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
       title: "Dashboard",
       icon: "fas fa-fw fa-tachometer-alt",
       targetPage: "dashboard"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
       title: "Categorias",
       icon: "fas fa-fw fa-list",
       targetPage: "allCategories"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
       title: "Posts",
       icon: "fas fa-fw fa-blog",
       targetPage: "allPosts"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_DashboardLink__WEBPACK_IMPORTED_MODULE_1__["default"], {
       title: "Usu\xE1rios",
       icon: "fas fa-fw fa-users",
       targetPage: "allUsers"
-    })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_DashboardLinkHome__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
@@ -2528,14 +2565,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TopBarDropdowDivider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TopBarDropdowDivider */ "./resources/js/components/topBar/TopBarDropdowDivider.jsx");
 /* harmony import */ var _TopBarLogoutButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TopBarLogoutButton */ "./resources/js/components/topBar/TopBarLogoutButton.jsx");
 /* harmony import */ var _TopBarUserLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TopBarUserLink */ "./resources/js/components/topBar/TopBarUserLink.jsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var _TopBarWebsiteButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TopBarWebsiteButton */ "./resources/js/components/topBar/TopBarWebsiteButton.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -2550,7 +2589,7 @@ function NavItemUser() {
     setLoggedUserName = _useState2[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     // Faz a requisição para a rota que retorna o nome do usuário logado
-    axios__WEBPACK_IMPORTED_MODULE_5__["default"].get('/api/loggedUserName').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_6__["default"].get('/api/loggedUserName').then(function (response) {
       // Se a requisição for bem-sucedida, armazena o nome do usuário
       setLoggedUserName(response.data);
     })["catch"](function (error) {
@@ -2559,9 +2598,9 @@ function NavItemUser() {
     });
   }, []); // O efeito é executado apenas uma vez quando o componente é montado
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
     className: "nav-item dropdown no-arrow",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
       className: "nav-link dropdown-toggle",
       href: "#",
       id: "userDropdown",
@@ -2569,18 +2608,18 @@ function NavItemUser() {
       "data-toggle": "dropdown",
       "aria-haspopup": "true",
       "aria-expanded": "false",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
         className: "mr-2 d-none d-lg-inline text-gray-600 small",
         children: loggedUserName
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         className: "img-profile rounded-circle",
         src: "/sb-admin/img/undraw_profile.svg",
         alt: "..."
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "dropdown-menu dropdown-menu-right shadow animated--grow-in",
       "aria-labelledby": "userDropdown",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_TopBarLogoutButton__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_TopBarWebsiteButton__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_TopBarLogoutButton__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
     })]
   });
 }
@@ -2813,6 +2852,32 @@ function TopBarUserLink(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
       className: "".concat(props.icon, " fa-sm fa-fw mr-2 text-gray-400")
     }), props.title]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/topBar/TopBarWebsiteButton.jsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/topBar/TopBarWebsiteButton.jsx ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ TopBarWebsiteButton)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+function TopBarWebsiteButton() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+    href: "/",
+    className: "dropdown-item",
+    title: "Website",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("i", {
+      className: "fas fa-home fa-sm fa-fw mr-2 text-gray-400"
+    }), "Website"]
   });
 }
 

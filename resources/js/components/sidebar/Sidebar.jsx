@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DashboardLink from './DashboardLink';
 import SidebarBrand from './SidebarBrand';
 import SidebarDivider from './SidebarDivider';
+import DashboardHome from './DashboardLinkHome';
 
 function Sidebar() {
   const [isComponentsOpen, setIsComponentsOpen] = useState(false);
@@ -42,6 +43,8 @@ function Sidebar() {
         icon="fas fa-fw fa-users"
         targetPage="allUsers"
       />
+
+      <DashboardHome />
 
     </ul>
   );

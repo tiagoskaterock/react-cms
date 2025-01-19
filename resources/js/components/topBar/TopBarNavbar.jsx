@@ -7,11 +7,10 @@ import TopBarDivider from "./TopBarDivider";
 export default function TopBarNavbar() {
     return (
         <ul className="navbar-nav ml-auto">
-
             <NavItemSearchDropdown />
 
             <NavItemUser />
 
         </ul>
-    )
+    );
 }
