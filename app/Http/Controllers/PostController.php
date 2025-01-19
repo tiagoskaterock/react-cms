@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function Allposts(): Collection
     {
-        return Post::all();
+        return Post::orderBy('created_at', 'desc')->get();
     }
 
     public function viewPost($id)
