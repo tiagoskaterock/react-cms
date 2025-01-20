@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -40,23 +41,40 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'body' => 'required|string',
             'category_id' => 'required|exists:categories,id',
-            // 'banner' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Valida a imagem
+            'banner' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        
+        if ($validator->fails()) {
+            // Retorna os erros de validação no formato JSON
+            return response()->json([
+                'message' => 'Erro de validação nos dados fornecidos.' . $validator->errors(),
+                'errors' => $validator->errors(),
+            ], 422);
+        }
 
         try {
-            $post = Post::create($validated);
+            $post = new Post();
+            $post->fill($request->all());
+
+            // Verifica e salva o banner, se fornecido
+            if ($request->hasFile('banner')) {
+                $post->banner = $request->file('banner')->store('uploads/posts');
+            }
+
+            $post->save();
 
             return response()->json([
                 'message' => 'Post criado com sucesso!',
                 'post' => $post,
             ], 201);
         } catch (\Exception $e) {
+            // Retorna erro genérico
             return response()->json([
-                'message' => 'Erro ao criar post: ' . $e->getMessage(),
+                'message' => 'Erro ao criar o post.',
                 'error' => $e->getMessage(),
             ], 500);
         }

@@ -16,7 +16,7 @@ const App = () => {
         <>         
             <PageProvider>
                 <Sidebar />
-                <ContentWrapper />           
+                <ContentWrapper />            
             </PageProvider>   
         </>
     );

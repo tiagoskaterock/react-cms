@@ -39,9 +39,10 @@ export default function PostForm(props) {
       </div>
 
       {/* Novo campo de input do tipo file */}
-      {/* <div className="form-group">
+      <div className="form-group">
         <label htmlFor="banner">Imagem (Banner)</label>
         <input
+          name='banner'
           type="file"
           id="banner"
           className="form-control"
@@ -49,7 +50,7 @@ export default function PostForm(props) {
           accept="image/*" // Aceita apenas imagens
           required
         />
-      </div> */}
+      </div>
 
       <div className="form-group">
         <label htmlFor="categoryId">Categoria</label>
