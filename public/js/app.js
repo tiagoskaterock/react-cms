@@ -1477,20 +1477,14 @@ function NewPost() {
     });
   }, []); // Executa apenas uma vez ao montar o componente
 
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
+  var handleSubmit = function handleSubmit(formData) {
     setLoading(true);
     fetch("/api/posts", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "X-CSRF-TOKEN": getCSRFToken()
+        "X-CSRF-TOKEN": getCSRFToken() // Não inclua "Content-Type", o FormData define automaticamente
       },
-      body: JSON.stringify({
-        name: postName,
-        body: postBody,
-        category_id: categoryId
-      })
+      body: formData // Envia o FormData diretamente
     }).then(function (response) {
       if (response.ok) {
         return response.json();
@@ -1530,7 +1524,7 @@ function NewPost() {
       className: "alert alert-info",
       children: message
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_PostForm_jsx__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      handleSubmit: handleSubmit,
+      onFormSubmit: handleSubmit,
       setPostName: setPostName,
       setPostBody: setPostBody,
       setCategoryId: setCategoryId,
@@ -1571,16 +1565,38 @@ function PostForm(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     banner = _useState2[0],
-    setBanner = _useState2[1]; // Estado para armazenar o arquivo da imagem
-
+    setBanner = _useState2[1];
   var handleFileChange = function handleFileChange(e) {
-    var file = e.target.files[0]; // Pega o primeiro arquivo selecionado
+    var file = e.target.files[0];
     if (file) {
-      setBanner(file); // Atualiza o estado com o arquivo
+      setBanner(file);
+    }
+  };
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+
+    // Verifica se o banner está preenchido
+    if (!banner) {
+      alert("Por favor, selecione um banner.");
+      return;
+    }
+
+    // Monta o objeto de dados com o banner
+    var formData = new FormData();
+    formData.append('banner', banner);
+    formData.append('postName', props.postName);
+    formData.append('postBody', props.postBody);
+    formData.append('categoryId', props.categoryId);
+
+    // Chama a função passada pelos props com os dados do formulário
+    if (typeof props.onFormSubmit === "function") {
+      props.onFormSubmit(formData);
+    } else {
+      console.error("onFormSubmit não foi fornecido ou não é uma função.");
     }
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-    onSubmit: props.handleSubmit,
+    onSubmit: handleSubmit,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "form-group",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
@@ -1622,11 +1638,8 @@ function PostForm(props) {
         type: "file",
         id: "banner",
         className: "form-control",
-        onChange: handleFileChange // Atualiza o estado com o arquivo
-        ,
-        accept: "image/*" // Aceita apenas imagens
-        ,
-        required: true
+        onChange: handleFileChange,
+        accept: "image/*"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "form-group",

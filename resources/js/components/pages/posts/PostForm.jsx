@@ -2,17 +2,42 @@ import { useState } from 'react';
 
 export default function PostForm(props) {
 
-  const [banner, setBanner] = useState(null); // Estado para armazenar o arquivo da imagem
+  const [banner, setBanner] = useState(null);
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0]; // Pega o primeiro arquivo selecionado
+    const file = e.target.files[0];
     if (file) {
-      setBanner(file); // Atualiza o estado com o arquivo
+      setBanner(file);
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    // Verifica se o banner está preenchido
+    if (!banner) {
+      alert("Por favor, selecione um banner.");
+      return;
+    }
+  
+    // Monta o objeto de dados com o banner
+    const formData = new FormData();
+    formData.append('banner', banner);
+    formData.append('postName', props.postName);
+    formData.append('postBody', props.postBody);
+    formData.append('categoryId', props.categoryId);
+  
+    // Chama a função passada pelos props com os dados do formulário
+    if (typeof props.onFormSubmit === "function") {
+      props.onFormSubmit(formData);
+    } else {
+      console.error("onFormSubmit não foi fornecido ou não é uma função.");
+    }
+  };
+  
+
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="postName">Título do Post</label>
         <input
@@ -38,7 +63,7 @@ export default function PostForm(props) {
         />
       </div>
 
-      {/* Novo campo de input do tipo file */}
+      {/* Input de arquivo para o banner */}
       <div className="form-group">
         <label htmlFor="banner">Imagem (Banner)</label>
         <input
@@ -46,9 +71,8 @@ export default function PostForm(props) {
           type="file"
           id="banner"
           className="form-control"
-          onChange={handleFileChange} // Atualiza o estado com o arquivo
-          accept="image/*" // Aceita apenas imagens
-          required
+          onChange={handleFileChange}
+          accept="image/*"
         />
       </div>
 

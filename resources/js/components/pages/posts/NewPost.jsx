@@ -35,21 +35,15 @@ export default function NewPost() {
       });
   }, []); // Executa apenas uma vez ao montar o componente
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (formData) => {
     setLoading(true);
-
+  
     fetch("/api/posts", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "X-CSRF-TOKEN": getCSRFToken(),
+        "X-CSRF-TOKEN": getCSRFToken(), // Não inclua "Content-Type", o FormData define automaticamente
       },
-      body: JSON.stringify({
-        name: postName,
-        body: postBody,
-        category_id: categoryId,
-      }),
+      body: formData, // Envia o FormData diretamente
     })
       .then((response) => {
         if (response.ok) {
@@ -71,6 +65,7 @@ export default function NewPost() {
       })
       .finally(() => setLoading(false));
   };
+  
 
   return (
     <div className="container-fluid">
@@ -87,7 +82,7 @@ export default function NewPost() {
       {message && <div className="alert alert-info">{message}</div>}
 
       <PostForm 
-        handleSubmit={handleSubmit}
+        onFormSubmit={handleSubmit}
         setPostName={setPostName}
         setPostBody={setPostBody}
         setCategoryId={setCategoryId}
