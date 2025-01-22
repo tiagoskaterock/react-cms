@@ -2043,64 +2043,45 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-function NewUser() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+function NewUser(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
-    categories = _useState2[0],
-    setCategories = _useState2[1]; // Estado para armazenar usuários
+    userName = _useState2[0],
+    setUserName = _useState2[1];
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState4 = _slicedToArray(_useState3, 2),
-    postName = _useState4[0],
-    setPostName = _useState4[1];
+    userEmail = _useState4[0],
+    setUserEmail = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState6 = _slicedToArray(_useState5, 2),
-    postBody = _useState6[0],
-    setPostBody = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    userPassword = _useState6[0],
+    setUserPassword = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState8 = _slicedToArray(_useState7, 2),
-    categoryId = _useState8[0],
-    setCategoryId = _useState8[1]; // Categoria vinculada ao post
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    loading = _useState8[0],
+    setLoading = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState10 = _slicedToArray(_useState9, 2),
-    loading = _useState10[0],
-    setLoading = _useState10[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
-    _useState12 = _slicedToArray(_useState11, 2),
-    message = _useState12[0],
-    setMessage = _useState12[1];
+    message = _useState10[0],
+    setMessage = _useState10[1];
   var _usePage = (0,_contexts_PageContent_js__WEBPACK_IMPORTED_MODULE_3__.usePage)(),
     setCurrentPage = _usePage.setCurrentPage;
   var getCSRFToken = function getCSRFToken() {
     return document.head.querySelector('meta[name="csrf-token"]').content;
   };
-
-  // Função para buscar usuários da API
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    setLoading(true); // Ativa o carregamento antes de buscar
-    fetch("/api/AllUsers").then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      setCategories(data); // Define as usuários no estado
-      setLoading(false); // Desativa o carregamento
-    })["catch"](function (error) {
-      console.error("Erro ao buscar usuários:", error);
-      setLoading(false);
-    });
-  }, []); // Executa apenas uma vez ao montar o componente
-
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    fetch("/api/posts", {
+    fetch("/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-CSRF-TOKEN": getCSRFToken()
       },
       body: JSON.stringify({
-        name: postName,
-        body: postBody,
-        category_id: categoryId
+        name: userName,
+        email: userEmail,
+        password: userPassword
       })
     }).then(function (response) {
       if (response.ok) {
@@ -2110,9 +2091,9 @@ function NewUser() {
         throw new Error(data.message || "Erro desconhecido");
       });
     }).then(function (data) {
-      setMessage("Post \"".concat(data.post.name, "\" criado com sucesso!"));
-      setPostName("");
-      setPostBody("");
+      setMessage("Usu\xE1rio \"".concat(data.post.name, "\" criado com sucesso!"));
+      setuserName("");
+      setuserEmail("");
       setCategoryId("");
     })["catch"](function (error) {
       setMessage(error.message || "Erro ao criar usuário. Tente novamente.");
@@ -2140,8 +2121,62 @@ function NewUser() {
     }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "alert alert-info",
       children: message
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("form", {
-      onSubmit: handleSubmit
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+      onSubmit: handleSubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          htmlFor: "userName",
+          children: "Nome"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+          type: "text",
+          id: "userName",
+          className: "form-control",
+          value: userName,
+          onChange: function onChange(e) {
+            return setUserName(e.target.value);
+          },
+          placeholder: "Digite o nome do usu\xE1rio",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          htmlFor: "userEmail",
+          children: "Email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+          type: "email",
+          id: "userEmail",
+          className: "form-control",
+          value: userEmail,
+          onChange: function onChange(e) {
+            return setUserEmail(e.target.value);
+          },
+          placeholder: "Digite o email",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+          htmlFor: "userPassword",
+          children: "Email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+          type: "password",
+          id: "userPassword",
+          className: "form-control",
+          value: userPassword,
+          onChange: function onChange(e) {
+            return setUserPassword(e.target.value);
+          },
+          placeholder: "Digite a senha",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+        type: "submit",
+        className: "btn btn-primary",
+        disabled: loading || !userName.trim(),
+        children: props.loading ? "Carregando..." : "Salvar Usuário"
+      })]
     })]
   });
 }
